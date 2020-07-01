@@ -11,29 +11,30 @@ if($mysqli->query($query)===TRUE){
 $mysqli->close();
 
 session_start();
+include 'db_connection.php';
 if($_SERVER['REQUEST_METHOD']=='POST'){
-  //two password are equal to each other
-  include 'db_connection.php';
-    if($_POST['r_password']==$_POST['r_confirmpassword']){
-      //real escape string use for inserting special characters in database 
-      $username=$mysqli->real_escape_string($_POST['r_username']);
-      $email=$mysqli->real_escape_string($_POST['r_email']);
-      $password=md5($_POST['r_password']);//md5 used for security
+  if ( ! empty($_POST['username'])&& !empty($_POST['password'])){
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+    $query = "SELECT * FROM vendors WHERE username='".$username."' AND password='".$password."'";
+    
+    if ($result = $mysqli -> query($query)) {
+      while ($row = $result -> fetch_row()) {
 
-      $query="INSERT INTO vendors(username,email,password)".
-                          "VALUES('$username','$emai','$password')";
-        if($mysqli->query($query)===TRUE){
-          $_SESSION['message']="Registration Successful added $username to DataBase";
-          //header("location:welcome.php");
-        }else{
-          $_SESSION['message']="user name can't be added to database";
-        }
-    }else{
-      $_SESSION['message']="Two passwords don't matched";
+        header("location:dashboard.php");
+      }
+      $result -> free_result();
     }
-
-
+    
+    $mysqli -> close();
+  }
+ 
+  
 }
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,61 +67,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="row">
-            <div class="col-6">
-               <!-- Horizontal Form -->
-             <div class="card card-info">
-              <div class="card-header">
-                <h3 class="card-title">Register</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form class="form-horizontal" method="post" autocomplete="on">
-                <div class="alert alert-error"></div>
-                <div class="card-body">
-                  <div class="form-group row">
-                    <label for="username" class="col-sm-2 col-form-label">Username</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="username" name="r_username"placeholder="Username" required>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="r_inputEmail" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="r_inputEmail" name="r_email" placeholder="Email" required>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" id="inputPassword" name="r_password" placeholder="Password" required>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="confirmpassword" class="col-sm-2 col-form-label">Confirm Password</label>
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" id="confirmpassword" name="r_confirmpassword" placeholder="Confirm Password" required>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="offset-sm-2 col-sm-10">
-                      <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                        <label class="form-check-label" for="exampleCheck2">Remember me</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-info">Register</button>
-                  <button type="submit" class="btn btn-default float-right">Cancel</button>
-                </div>
-                <!-- /.card-footer -->
-              </form>
-            </div>
-            <!-- /.card -->
-            </div><!--column-1-->
-            <div class="col-6">
+          
+            <div class="container">
                  <!-- Horizontal Form -->
                  <div class="card card-success">
                   <div class="card-header">
@@ -128,18 +76,18 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                   </div>
                   <!-- /.card-header -->
                   <!-- form start -->
-                  <form class="form-horizontal">
+                  <form class="form-horizontal"  method="post">
                     <div class="card-body">
                       <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                        <label for="username" class="col-sm-2 col-form-label">User name</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                          <input type="text" class="form-control" id="username" name="username" placeholder="username">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
-                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                          <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="Password">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -185,7 +133,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button)
+  
 </script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
