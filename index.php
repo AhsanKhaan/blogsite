@@ -1,9 +1,13 @@
+<?php 
+include 'db_connection.php';
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Pet Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -37,7 +41,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form class="form-horizontal">
+              <form class="form-horizontal" method="post" autocomplete="on">
                 <div class="card-body">
                   <div class="form-group row">
                     <label for="username" class="col-sm-2 col-form-label">Username</label>
