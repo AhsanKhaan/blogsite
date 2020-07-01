@@ -15,6 +15,7 @@ include 'db_connection.php';
 if($_SERVER['REQUEST_METHOD']=='POST'){
   if ( ! empty($_POST['username'])&& !empty($_POST['password'])){
     $username=$_POST['username'];
+    $_SESSION['username']=$_POST['username'];
     $password=$_POST['password'];
     $query = "SELECT * FROM vendors WHERE username='".$username."' AND password='".$password."'";
     
