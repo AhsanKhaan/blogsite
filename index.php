@@ -1,6 +1,39 @@
 <?php 
 include 'db_connection.php';
+$query="CREATE TABLE IF NOT EXISTS vendors( ID int(6) UNSIGNED AUTO_INCREMENT, username varchar(100) NOT NULL, email varchar(100) NOT NULL, password varchar(100) NOT NULL, PRIMARY KEY (ID) )
+";
+if($mysqli->query($query)===TRUE){
+  //do nothing
+  
+}else{
+  echo "Error creating table: " . $mysqli->error;
+}
+$mysqli->close();
 
+session_start();
+if($_SERVER['REQUEST_METHOD']=='POST'){
+  //two password are equal to each other
+  include 'db_connection.php';
+    if($_POST['r_password']==$_POST['r_confirmpassword']){
+      //real escape string use for inserting special characters in database 
+      $username=$mysqli->real_escape_string($_POST['r_username']);
+      $email=$mysqli->real_escape_string($_POST['r_email']);
+      $password=md5($_POST['r_password']);//md5 used for security
+
+      $query="INSERT INTO vendors(username,email,password)".
+                          "VALUES('$username','$emai','$password')";
+        if($mysqli->query($query)===TRUE){
+          $_SESSION['message']="Registration Successful added $username to DataBase";
+          //header("location:welcome.php");
+        }else{
+          $_SESSION['message']="user name can't be added to database";
+        }
+    }else{
+      $_SESSION['message']="Two passwords don't matched";
+    }
+
+
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,29 +75,30 @@ include 'db_connection.php';
               <!-- /.card-header -->
               <!-- form start -->
               <form class="form-horizontal" method="post" autocomplete="on">
+                <div class="alert alert-error"></div>
                 <div class="card-body">
                   <div class="form-group row">
                     <label for="username" class="col-sm-2 col-form-label">Username</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="username" placeholder="Username">
+                      <input type="text" class="form-control" id="username" name="r_username"placeholder="Username" required>
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                    <label for="r_inputEmail" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                      <input type="email" class="form-control" id="r_inputEmail" name="r_email" placeholder="Email" required>
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                     <div class="col-sm-10">
-                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                      <input type="password" class="form-control" id="inputPassword" name="r_password" placeholder="Password" required>
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="confirmpassword" class="col-sm-2 col-form-label">Confirm Password</label>
                     <div class="col-sm-10">
-                      <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password">
+                      <input type="password" class="form-control" id="confirmpassword" name="r_confirmpassword" placeholder="Confirm Password" required>
                     </div>
                   </div>
                   <div class="form-group row">
