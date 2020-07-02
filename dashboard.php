@@ -187,7 +187,7 @@ session_start();
                 </a>
               </li>
                <li class="nav-item">
-                <a href="./products.php" class="nav-link">
+                <a href="./productlist.php" class="nav-link">
                   <i class="fa fa-th-list" ></i>
                   <p>All products</p>
                 </a>

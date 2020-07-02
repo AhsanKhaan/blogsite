@@ -186,6 +186,12 @@ session_start();
                   <p id="add-product">Add Product</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="./productlist.php" class="nav-link">
+                  <i class="fa fa-th-list" ></i>
+                  <p>All products</p>
+                </a>
+              </li>
               <!-- <li class="nav-item">
                 <a href="./index2.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
