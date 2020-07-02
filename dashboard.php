@@ -18,6 +18,8 @@ session_start();
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Custom Styling -->
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -1169,6 +1171,7 @@ session_start();
               </form>
             </div>
             <!-- /.card -->
+            <div class="test">dfjkashdkjashdjksahdaskjhdasjdhasjkdhaskjcnbsdhcbashjgbajhxbasxjhcasbjhhbj</div>
 
       </div><!--col ends-->
     </div> <!--row ends-->
@@ -1216,5 +1219,6 @@ session_start();
 
 <!-- PAGE SCRIPTS -->
 <script src="dist/js/pages/dashboard2.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
