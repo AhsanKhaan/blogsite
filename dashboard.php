@@ -181,18 +181,18 @@ session_start();
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="./product.php" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
-                  <p>Add Product</p>
+                  <p id="add-product">Add Product</p>
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                <a href="./index2.html" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
+               <li class="nav-item">
+                <a href="./products.php" class="nav-link">
+                  <i class="fa fa-th-list" ></i>
+                  <p>All products</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!--<li class="nav-item">
                 <a href="./index3.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v3</p>
@@ -723,7 +723,7 @@ session_start();
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
+    <section id="main-section" class="content">
       <div class="container-fluid">
         <!-- Info boxes -->
         <div class="row">
@@ -1117,64 +1117,7 @@ session_start();
       </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->
-    <div class="row">
-      <div class="col-12">
-                    <!-- general form elements -->
-                    <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Product Details</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form role="form">
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="productname">Product Name</label>
-                    <input type="text" class="form-control" id="productname" placeholder="Product Name">
-                  </div>
-                  <div class="form-group">
-                    <label for="slug-url">URL Link</label>
-                    <input type="text" class="form-control" id="slug-url" placeholder="slug-url">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">Upload Image</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Upload</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>
-                   <!-- textarea -->
-                   <div class="form-group">
-                        <label>Add Description</label>
-                        <textarea class="form-control" rows="3" placeholder="Enter Product Description ...."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Quantity</label>
-                        <input type="number" value="1" min="0" max="20" step="1"/>
-
-                    </div>
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary"> <i class="fa fa-plus nav-icon" style="margin-right:10px;"></i>Add Product</button>
-                </div>
-              </form>
-            </div>
-            <!-- /.card -->
-            <div class="test">dfjkashdkjashdjksahdaskjhdasjdhasjkdhaskjcnbsdhcbashjgbajhxbasxjhcasbjhhbj</div>
-
-      </div><!--col ends-->
-    </div> <!--row ends-->
+ 
   </div>
   <!-- /.content-wrapper -->
 
