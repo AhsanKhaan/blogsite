@@ -1,3 +1,4 @@
+db_connection.php
 // System / Log files 
 *.DS_Store
 *.log
@@ -36,4 +37,3 @@ docs_html/
 TODO
 test.html
 ad.js
-db_connection.php
