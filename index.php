@@ -23,7 +23,10 @@ $mysqli->close();
 //user login password matching function
 session_start();
 include 'db_connection.php';
+//for doctor
 if(isset($_POST['doctor'])){
+  //setting for doctor
+  $_SESSION['user_status']='doctor';
   if($_SERVER['REQUEST_METHOD']=='POST'){
     if ( ! empty($_POST['username'])&& !empty($_POST['password'])){
       $username=$_POST['username'];
@@ -33,8 +36,8 @@ if(isset($_POST['doctor'])){
       
       if ($result = $mysqli -> query($query)) {
         while ($row = $result -> fetch_row()) {
-  
           header("location:dashboard.php");
+          
         }
         $result -> free_result();
       }
@@ -45,7 +48,9 @@ if(isset($_POST['doctor'])){
     
   }
 }else{
+  //for vendor
   if($_SERVER['REQUEST_METHOD']=='POST'){
+    $_SESSION['user_status']='vendor';
     if ( ! empty($_POST['username'])&& !empty($_POST['password'])){
       $username=$_POST['username'];
       $_SESSION['username']=$_POST['username'];

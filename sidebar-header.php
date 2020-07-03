@@ -168,7 +168,7 @@ session_start();
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column" id="side_bar"data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
@@ -192,7 +192,14 @@ session_start();
                   <p>All products</p>
                 </a>
               </li>
-  
+              <?php
+              if($_SESSION['user_status']=='doctor'){
+
+                echo "<li class='nav-item'><a href='appoinments.php' class='nav-link'><i class='nav-icon fas fa-calendar-alt'></i><p>Appoinments<span class='badge badge-info right'>2</span></p></a></li>";
+              
+                      
+              }
+              ?>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
