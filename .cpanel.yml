@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/pakanimals/public_html/
+    - export DEPLOYPATH=/home/pakanimals/public_html/animals
     - /bin/cp -R * $DEPLOYPATH
