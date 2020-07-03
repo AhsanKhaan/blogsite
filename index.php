@@ -1,6 +1,16 @@
 <?php 
 include 'db_connection.php';
+//table for vendors
 $query="CREATE TABLE IF NOT EXISTS vendors( ID int(6) UNSIGNED AUTO_INCREMENT, username varchar(100) NOT NULL, email varchar(100) NOT NULL, password varchar(100) NOT NULL, PRIMARY KEY (ID) )
+";
+if($mysqli->query($query)===TRUE){
+  //do nothing
+  
+}else{
+  echo "Error creating table: " . $mysqli->error;
+}
+//table for doctor
+$query="CREATE TABLE IF NOT EXISTS doctors( ID int(6) UNSIGNED AUTO_INCREMENT, username varchar(100) NOT NULL, email varchar(100) NOT NULL, password varchar(100) NOT NULL, PRIMARY KEY (ID) )
 ";
 if($mysqli->query($query)===TRUE){
   //do nothing
@@ -10,28 +20,54 @@ if($mysqli->query($query)===TRUE){
 }
 $mysqli->close();
 
+//user login password matching function
 session_start();
 include 'db_connection.php';
-if($_SERVER['REQUEST_METHOD']=='POST'){
-  if ( ! empty($_POST['username'])&& !empty($_POST['password'])){
-    $username=$_POST['username'];
-    $_SESSION['username']=$_POST['username'];
-    $password=$_POST['password'];
-    $query = "SELECT * FROM vendors WHERE username='".$username."' AND password='".$password."'";
-    
-    if ($result = $mysqli -> query($query)) {
-      while ($row = $result -> fetch_row()) {
-
-        header("location:dashboard.php");
-      }
-      $result -> free_result();
-    }
-    
-    $mysqli -> close();
-  }
- 
+if(isset($_POST['doctor'])){
+  if($_SERVER['REQUEST_METHOD']=='POST'){
+    if ( ! empty($_POST['username'])&& !empty($_POST['password'])){
+      $username=$_POST['username'];
+      $_SESSION['username']=$_POST['username'];
+      $password=$_POST['password'];
+      $query = "SELECT * FROM doctors WHERE username='".$username."' AND password='".$password."'";
+      
+      if ($result = $mysqli -> query($query)) {
+        while ($row = $result -> fetch_row()) {
   
+          header("location:dashboard.php");
+        }
+        $result -> free_result();
+      }
+      
+      $mysqli -> close();
+    }
+   
+    
+  }
+}else{
+  if($_SERVER['REQUEST_METHOD']=='POST'){
+    if ( ! empty($_POST['username'])&& !empty($_POST['password'])){
+      $username=$_POST['username'];
+      $_SESSION['username']=$_POST['username'];
+      $password=$_POST['password'];
+      $query = "SELECT * FROM vendors WHERE username='".$username."' AND password='".$password."'";
+      
+      if ($result = $mysqli -> query($query)) {
+        while ($row = $result -> fetch_row()) {
+  
+          header("location:dashboard.php");
+        }
+        $result -> free_result();
+      }
+      
+      $mysqli -> close();
+    }
+   
+    
+  }
+
 }
+
 
 
 
@@ -87,9 +123,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
+              <input type="checkbox" id="doctor" name="doctor" value="doctor">
+              <label for="doctor">
+                Sign in as Doctor
               </label>
             </div>
           </div>
