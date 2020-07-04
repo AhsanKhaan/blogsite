@@ -8,6 +8,7 @@ if($mysqli->query($query)===TRUE){
   
 }else{
   echo "Error creating table: " . $mysqli->error;
+  exit();
 }
 //table for doctor
 $query="CREATE TABLE IF NOT EXISTS doctors( ID int(6) UNSIGNED AUTO_INCREMENT, username varchar(100) NOT NULL, email varchar(100) NOT NULL, password varchar(100) NOT NULL, PRIMARY KEY (ID) )
@@ -69,7 +70,7 @@ if(isset($_POST['doctor'])){
     }
    
     
-  }
+  }//if post method ends
 
 }
 
