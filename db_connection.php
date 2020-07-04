@@ -1,8 +1,8 @@
 <?php
-$host="usa";
-$user="pakanimals_ahsan";
-$password="Wordpress@123";
-$data_base="pakanimals_petshop";
+$host="local";
+$user="root";
+$password="";
+$data_base="petshop";
 
 $mysqli = new mysqli($host,$user,$password,$data_base);
 
