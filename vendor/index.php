@@ -11,7 +11,7 @@ if($mysqli->query($query)===TRUE){
   echo "Error creating table: " . $mysqli->error;
   exit();
 }
-
+    session_start();
   //for vendor
   if($_SERVER['REQUEST_METHOD']=='POST'){
     $_SESSION['user_status']='vendor';
