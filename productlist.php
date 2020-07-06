@@ -2,7 +2,7 @@
 <div class="col-lg-12 col-sm-6 col-md-3">
 <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Bordered Table</h3>
+                <h3 class="card-title">All products</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -10,15 +10,15 @@
                   <thead>                  
                     <tr>
                       <th style="width: 10px">#</th>
-                      <th>Task</th>
-                      <th>Progress</th>
-                      <th style="width: 40px">Label</th>
+                      <th>Product Name</th>
+                      <th>In Stock</th>
+                      <th style="width: 40px">Sales %</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1.</td>
-                      <td>Parrot</td>
+                      <td>Wild Animals</td>
                       <td>
                         <div class="progress progress-xs">
                           <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
@@ -28,7 +28,7 @@
                     </tr>
                     <tr>
                       <td>2.</td>
-                      <td>Clean database</td>
+                      <td>Pets</td>
                       <td>
                         <div class="progress progress-xs">
                           <div class="progress-bar bg-warning" style="width: 70%"></div>
@@ -38,7 +38,7 @@
                     </tr>
                     <tr>
                       <td>3.</td>
-                      <td>Cron job running</td>
+                      <td>Reptiles</td>
                       <td>
                         <div class="progress progress-xs progress-striped active">
                           <div class="progress-bar bg-primary" style="width: 30%"></div>
@@ -48,7 +48,7 @@
                     </tr>
                     <tr>
                       <td>4.</td>
-                      <td>Fix and squish bugs</td>
+                      <td>Pets</td>
                       <td>
                         <div class="progress progress-xs progress-striped active">
                           <div class="progress-bar bg-success" style="width: 90%"></div>
