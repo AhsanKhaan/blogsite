@@ -1,5 +1,6 @@
 <?php 
-include 'db_connection.php';
+
+include '../db_connection.php';
 //table for vendors
 $query="CREATE TABLE IF NOT EXISTS vendors( ID int(6) UNSIGNED AUTO_INCREMENT, username varchar(100) NOT NULL, email varchar(100) NOT NULL, password varchar(100) NOT NULL, PRIMARY KEY (ID) )
 ";
@@ -10,45 +11,7 @@ if($mysqli->query($query)===TRUE){
   echo "Error creating table: " . $mysqli->error;
   exit();
 }
-//table for doctor
-$query="CREATE TABLE IF NOT EXISTS doctors( ID int(6) UNSIGNED AUTO_INCREMENT, username varchar(100) NOT NULL, email varchar(100) NOT NULL, password varchar(100) NOT NULL, PRIMARY KEY (ID) )
-";
-if($mysqli->query($query)===TRUE){
-  //do nothing
-  
-}else{
-  echo "Error creating table: " . $mysqli->error;
-}
-$mysqli->close();
 
-//user login password matching function
-session_start();
-include 'db_connection.php';
-//for doctor
-if(isset($_POST['doctor'])){
-  //setting for doctor
-  $_SESSION['user_status']='doctor';
-  if($_SERVER['REQUEST_METHOD']=='POST'){
-    if ( ! empty($_POST['username'])&& !empty($_POST['password'])){
-      $username=$_POST['username'];
-      $_SESSION['username']=$_POST['username'];
-      $password=$_POST['password'];
-      $query = "SELECT * FROM doctors WHERE username='".$username."' AND password='".$password."'";
-      
-      if ($result = $mysqli -> query($query)) {
-        while ($row = $result -> fetch_row()) {
-          header("location:dashboard.php");
-          
-        }
-        $result -> free_result();
-      }
-      
-      $mysqli -> close();
-    }
-   
-    
-  }
-}else{
   //for vendor
   if($_SERVER['REQUEST_METHOD']=='POST'){
     $_SESSION['user_status']='vendor';
@@ -61,7 +24,7 @@ if(isset($_POST['doctor'])){
       if ($result = $mysqli -> query($query)) {
         while ($row = $result -> fetch_row()) {
   
-          header("location:dashboard.php");
+          header("location:../dashboard.php");
         }
         $result -> free_result();
       }
@@ -71,13 +34,6 @@ if(isset($_POST['doctor'])){
    
     
   }//if post method ends
-
-}
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -89,20 +45,20 @@ if(isset($_POST['doctor'])){
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Login</b>LTE</a>
+    <a href="#"><b>Login</b>LTE</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -167,11 +123,11 @@ if(isset($_POST['doctor'])){
 <!-- /.login-box -->
 
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="../dist/js/adminlte.min.js"></script>
 
 </body>
 </html>
