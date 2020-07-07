@@ -57,16 +57,18 @@ include '../db_connection.php';
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!--Custom CSS-->
+  <link href="../css/style.css" rel="stylesheet">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page bg">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Login</b>LTE</a>
+    <a href="#" class="black"><b class="black">Pak</b>Animals</a>
   </div>
   <!-- /.login-logo -->
-  <div class="card">
+  <div class="card opacity ">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg black">Sign in to start your session</p>
 
       <form  method="post">
         <div class="input-group mb-3">
@@ -85,33 +87,11 @@ include '../db_connection.php';
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="doctor" name="doctor" value="doctor">
-              <label for="doctor">
-                Sign in as Doctor
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
+        <div class="container">
+         <button type="submit" class="btn btn-outline-success btn-block text-bold">Sign In</button>
         </div>
       </form>
 
-      <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
-      </div>
-      <!-- /.social-auth-links -->
 
       <p class="mb-1">
         <a href="forgot-password.html">I forgot my password</a>
