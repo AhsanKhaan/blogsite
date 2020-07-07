@@ -81,6 +81,17 @@
 
                 <hr>
 
+                  <strong><i class="fa fa-address-card mr-1"></i> Contact</strong>
+
+                  <p class="text-muted">
+                    <span ><i class="fa fa-phone" aria-hidden="true"></i><b>0321-1234567</b></span>
+                    <br>
+                    <span ><i class="fa fa-envelope" aria-hidden="true"></i><b><a href="mailto:example@gmail.com">example@gmail.com</a></b></span>
+                    
+                  </p>
+
+                <hr>
+
                 <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
 
                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
