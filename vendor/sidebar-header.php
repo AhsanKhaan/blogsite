@@ -124,13 +124,6 @@ session_start();
                   <p>My Profile</p>
                 </a>
               </li>';
-              }else{
-                echo '<li class="nav-item">
-                <a href="./doctor_profile.php" class="nav-link">
-                  <i class="fa fa-user" ></i>
-                  <p>My Profile</p>
-                </a>
-              </li>';
               }
             ?>
 
