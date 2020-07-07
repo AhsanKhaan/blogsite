@@ -10,9 +10,10 @@
                   <thead>                  
                     <tr>
                       <th style="width: 10px">#</th>
-                      <th>Product Name</th>
-                      <th>In Stock</th>
-                      <th style="width: 40px">Sales %</th>
+                      <th style="width: 170px">Product Name</th>
+                      <th>Description</th>
+                      <th>Sale Price</th>
+                      <th style="width: 40px">Qty</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -20,41 +21,45 @@
                       <td>1.</td>
                       <td>Wild Animals</td>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
+                       <p>Category: Lion</p>
                       </td>
-                      <td><span class="badge bg-danger">55%</span></td>
+                      <td>
+                         <p>$100</p>
+                      </td>
+                      <td><span class="badge ">1</span></td>
                     </tr>
                     <tr>
                       <td>2.</td>
-                      <td>Pets</td>
+                      <td>Pitbull</td>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-warning" style="width: 70%"></div>
-                        </div>
+                          <p>Category:Carnivourous</p>
                       </td>
-                      <td><span class="badge bg-warning">70%</span></td>
+                      <td>
+                         <p>$100</p>
+                      </td>
+                      <td><span class="badge ">10</span></td>
                     </tr>
                     <tr>
                       <td>3.</td>
-                      <td>Reptiles</td>
+                      <td>Persian Cat</td>
                       <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-primary" style="width: 30%"></div>
-                        </div>
+                        <p>Category:Carnivourous </p>
                       </td>
-                      <td><span class="badge bg-primary">30%</span></td>
+                      <td>
+                         <p>$100</p>
+                      </td>
+                      <td><span class="badge ">13</span></td>
                     </tr>
                     <tr>
                       <td>4.</td>
-                      <td>Pets</td>
+                      <td>black mamba</td>
                       <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-success" style="width: 90%"></div>
-                        </div>
+                        <p>Category:reptiles</p>
                       </td>
-                      <td><span class="badge bg-success">90%</span></td>
+                      <td>
+                         <p>$100</p>
+                      </td>
+                      <td><span class="badge ">9</span></td>
                     </tr>
                   </tbody>
                 </table>
