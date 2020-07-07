@@ -128,7 +128,7 @@ session_start();
             ?>
 
               <li class="nav-item active">
-                <a href="../dashboard.php" class="nav-link active">
+                <a href="./dashboard.php" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -137,13 +137,13 @@ session_start();
               </a>
               </li>
               <li class="nav-item">
-                <a href="../product.php" class="nav-link">
+                <a href="./product.php" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
                   <p id="add-product">Add Product</p>
                 </a>
               </li>
                <li class="nav-item">
-                <a href="../productlist.php" class="nav-link">
+                <a href="./productlist.php" class="nav-link">
                   <i class="fa fa-th-list" ></i>
                   <p>All products</p>
                 </a>
