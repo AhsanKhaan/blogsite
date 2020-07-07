@@ -116,6 +116,24 @@ session_start();
           <li class="nav-item has-treeview menu-open">
 
             <ul class="nav nav-treeview">
+            <?php 
+              if($_SESSION['user_status']=='vendor'){
+                echo '<li class="nav-item">
+                <a href="./vendor/vendor_profile.php" class="nav-link">
+                  <i class="fa fa-user" ></i>
+                  <p>My Profile</p>
+                </a>
+              </li>';
+              }else{
+                echo '<li class="nav-item">
+                <a href="./doctor/doctor_profile.php" class="nav-link">
+                  <i class="fa fa-user" ></i>
+                  <p>My Profile</p>
+                </a>
+              </li>';
+              }
+            ?>
+
               <li class="nav-item active">
                 <a href="./dashboard.php" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -137,6 +155,7 @@ session_start();
                   <p>All products</p>
                 </a>
               </li>
+
               <?php
               if($_SESSION['user_status']=='doctor'){
 
