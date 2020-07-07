@@ -85,14 +85,8 @@ if($mysqli->query($query)===TRUE){
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-8">
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-outline-success btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
+        <div class="container">
+            <button type="submit" class="btn btn-outline-success btn-block text-bold">Sign In</button>
         </div>
       </form>
 
