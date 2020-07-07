@@ -144,22 +144,22 @@ session_start();
               </a>
               </li>
               <li class="nav-item">
-                <a href="../product.php" class="nav-link">
+                <a href="./add_services.php" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
-                  <p id="add-product">Add Product</p>
+                  <p id="add-product">Add Services</p>
                 </a>
               </li>
                <li class="nav-item">
-                <a href="../productlist.php" class="nav-link">
+                <a href="./services_list.php" class="nav-link">
                   <i class="fa fa-th-list" ></i>
-                  <p>All products</p>
+                  <p>All Services</p>
                 </a>
               </li>
 
               <?php
               if($_SESSION['user_status']=='doctor'){
 
-                echo "<li class='nav-item'><a href='../appoinments.php' class='nav-link'><i class='nav-icon fas fa-calendar-alt'></i><p>Appoinments<span class='badge badge-info right'>2</span></p></a></li>";
+                echo "<li class='nav-item'><a href='./appoinments.php' class='nav-link'><i class='nav-icon fas fa-calendar-alt'></i><p>Appoinments<span class='badge badge-info right'>2</span></p></a></li>";
               
                       
               }
