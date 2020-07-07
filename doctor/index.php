@@ -24,7 +24,7 @@ include '../db_connection.php';
       
       if ($result = $mysqli -> query($query)) {
         while ($row = $result -> fetch_row()) {
-          header("location:../dashboard.php");
+          header("location:doctor-dashboard.php");
           
         }
         $result -> free_result();
