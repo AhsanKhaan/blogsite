@@ -43,68 +43,102 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>Product ID</th>
-                      <th>Item</th>
-                      <th>Status</th>
-                      <th>Category</th>
+                      <th>Order ID</th>
+                      <th>Name</th>
+                      <th>Date</th>
+                      <th>Phone</th>
+                      <th>Email</th>
+                      <th>Price</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                       <td><a href="pages/examples/invoice.html">P9842</a></td>
                       <td>Cat food</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
                       <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Food accessories</div>
+                        <div class="sparkbar" data-color="#00a65a" data-height="20">01-june-2020</div>
                       </td>
+                      <td>
+                         0324-1234568
+                      </td>
+                      <td>
+                        admin@gmail.com
+                      </td>
+                      <td><span class="badge badge-success">$100</span></td>
                     </tr>
                     <tr>
-                      <td><a href="pages/examples/invoice.html">P1848</a></td>
-                      <td>German Shephard</td>
-                      <td><span class="badge badge-warning">Pending</span></td>
+                      <td><a href="pages/examples/invoice.html">P2842</a></td>
+                      <td>Dog neck cuffs</td>
+                      
                       <td>
-                        <div class="sparkbar" data-color="#f39c12" data-height="20">Pet</div>
+                        <div class="sparkbar" data-color="#00a65a" data-height="20">14-june-2000</div>
                       </td>
+                      <td>
+                         0324-123564546
+                      </td>
+                      <td>
+                        john_wick@gmail.com
+                      </td>
+                      <td><span class="badge badge-success">$200</span></td>
                     </tr>
                     <tr>
-                      <td><a href="pages/examples/invoice.html">P7429</a></td>
-                      <td>Black mamba</td>
-                      <td><span class="badge badge-danger">Delivered</span></td>
+                      <td><a href="pages/examples/invoice.html">P6742</a></td>
+                      <td>Cat Cushens</td>
+                      
                       <td>
-                        <div class="sparkbar" data-color="#f56954" data-height="20">Reptiles</div>
+                        <div class="sparkbar" data-color="#00a65a" data-height="20">12-july-2000</div>
                       </td>
+                      <td>
+                         0324-189721
+                      </td>
+                      <td>
+                        eliy@gmail.com
+                      </td>
+                      <td><span class="badge badge-success">$50</span></td>
                     </tr>
                     <tr>
-                      <td><a href="pages/examples/invoice.html">P7429</a></td>
-                      <td>Fringe Bird</td>
-                      <td><span class="badge badge-info">Processing</span></td>
+                      <td><a href="pages/examples/invoice.html">P3242</a></td>
+                      <td>bird Cage</td>
+                      
                       <td>
-                        <div class="sparkbar" data-color="#00c0ef" data-height="20">Birds</div>
+                        <div class="sparkbar" data-color="#00a65a" data-height="20">10-may-2020</div>
                       </td>
+                      <td>
+                         0324-1256734
+                      </td>
+                      <td>
+                        mak@gmail.com
+                      </td>
+                      <td><span class="badge badge-success">$1000</span></td>
                     </tr>
                     <tr>
-                      <td><a href="pages/examples/invoice.html">P1848</a></td>
-                      <td>cheetah baby</td>
-                      <td><span class="badge badge-warning">Pending</span></td>
+                      <td><a href="pages/examples/invoice.html">P4142</a></td>
+                      <td>dog cage</td>
                       <td>
-                        <div class="sparkbar" data-color="#f39c12" data-height="20">Wild</div>
+                        <div class="sparkbar" data-color="#00a65a" data-height="20">04-august-2020</div>
                       </td>
+                      <td>
+                         0324-1321548
+                      </td>
+                      <td>
+                        nim@gmail.com
+                      </td>
+                      <td><span class="badge badge-success">$1020</span></td>
                     </tr>
                     <tr>
-                      <td><a href="pages/examples/invoice.html">P7429</a></td>
-                      <td>Gold fish</td>
-                      <td><span class="badge badge-danger">Delivered</span></td>
+                      <td><a href="pages/examples/invoice.html">P1242</a></td>
+                      <td>Cat food</td>
+                      
                       <td>
-                        <div class="sparkbar" data-color="#f56954" data-height="20">Aquarious</div>
+                        <div class="sparkbar" data-color="#00a65a" data-height="20">21-september-2020</div>
                       </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">P9842</a></td>
-                      <td>Pi-Iodene</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
                       <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Vaccine</div>
+                         0324-1678154
                       </td>
+                      <td>
+                        mic@gmail.com
+                      </td>
+                      <td><span class="badge badge-success">$50</span></td>
                     </tr>
                     </tbody>
                   </table>
