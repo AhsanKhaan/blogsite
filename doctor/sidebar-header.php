@@ -159,7 +159,7 @@ session_start();
               <?php
               if($_SESSION['user_status']=='doctor'){
 
-                echo "<li class='nav-item'><a href='appoinments.php' class='nav-link'><i class='nav-icon fas fa-calendar-alt'></i><p>Appoinments<span class='badge badge-info right'>2</span></p></a></li>";
+                echo "<li class='nav-item'><a href='../appoinments.php' class='nav-link'><i class='nav-icon fas fa-calendar-alt'></i><p>Appoinments<span class='badge badge-info right'>2</span></p></a></li>";
               
                       
               }
