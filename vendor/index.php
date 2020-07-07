@@ -64,7 +64,7 @@ if($mysqli->query($query)===TRUE){
 
   </div>
   <!-- /.login-logo -->
-  <div class="card opacity bg-card">
+  <div class="card opacity">
     <div class="card-body login-card-body">
       <p class="login-box-msg black">Sign in to start your session</p>
 
