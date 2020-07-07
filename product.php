@@ -19,30 +19,63 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputFile">Upload Image</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Upload</span>
-                      </div>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="customFile">
+                      <label class="custom-file-label" for="customFile">Choose File</label>
                     </div>
                   </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  <div class="form-group">
+                    <label for="image-description">Image Description</label>
+                    <input type="text" class="form-control" id="image-description" placeholder="Image Description">
                   </div>
+                  <div class="form-group">
+                    <label for="Alt_text">Alt Text</label>
+                    <input type="text" class="form-control" id="Alt_text" placeholder="Alternate Text">
+                  </div>
+
                    <!-- textarea -->
                    <div class="form-group">
                         <label>Add Description</label>
                         <textarea class="form-control" rows="3" placeholder="Enter Product Description ...."></textarea>
                     </div>
-                    <div class="form-group">
-                        <label>Quantity</label>
-                        <input type="number" value="1" min="0" max="20" step="1"/>
+                    <div class="row">
+                      <div class="col-3">
+                        <div class="input-group">
+                        <label for="price">
+                          Price
+                        </label>
+                          <div style="margin-left:20px;" class="input-group-prepend">
+                          <span class="input-group-text">PKR</span>
+                        </div>
+                        <input id="price"type="text" class="form-control">
+                          <div class="input-group-append">
+                            <span class="input-group-text">.00</span>
+                          </div>
+                        </div> 
+                      </div>
+                      <!-- col ends -->
 
+                    <div class="col-3 align-right form-group">
+                        <label>Quantity</label>
+                        <input  style="border:solid 3px #CED4DA;border-radius:10px; margin-left:5px;" class="input-text-group" type="number" value="1" min="0" max="20" step="1"/>
                     </div>
+                    <div class="col-sm-6">
+                      <!-- select -->
+                      <div class="form-group">
+                        
+                        <select class="form-control">
+                        <option>Select Category</option>
+                          <option>Pet</option>
+                          <option>Wild</option>
+                          <option>Reptiles</option>
+                          <option>Birds</option>
+                          <option>Aqua Animals</option>
+                        </select>
+                      </div>
+                      <!-- col-sm-ends -->
+                    </div>
+                    </div>
+
                 </div>
                 <!-- /.card-body -->
 
