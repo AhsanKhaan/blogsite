@@ -1,5 +1,51 @@
 <?php include 'sidebar-header.php';?>
+          <div class="container-fluid"><h4>Totals</h4></div>  
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-money-bill-alt"></i></span>
 
+              <div class="info-box-content">
+                <span class="info-box-text">Payment Due</span>
+                <span class="info-box-number">$ 2,000</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+         <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-cart-arrow-down"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Pending Orders</span>
+                <span class="info-box-number">41,410</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-ship"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Shipped Orders</span>
+                <span class="info-box-number">
+                  20
+                  
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
@@ -16,7 +62,71 @@
 
         </div>
         <!-- /.row -->
+          <div class="row">
+          <div class="container-fluid"><h4>Today's Analytics</h4></div>  
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-money-bill-alt"></i></span>
 
+              <div class="info-box-content">
+                <span class="info-box-text">Payment Due</span>
+                <span class="info-box-number">$ 2,00</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+         <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-cart-arrow-down"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Pending Orders</span>
+                <span class="info-box-number">41</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-ship"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Shipped Orders</span>
+                <span class="info-box-number">
+                  1
+                  
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Sales</span>
+                <span class="info-box-number">7</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+        </div>
+        <!-- /.row -->
+          </div>
 
         <!-- Main row -->
         <div class="row">
