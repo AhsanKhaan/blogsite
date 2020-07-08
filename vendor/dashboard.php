@@ -136,7 +136,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Latest Products</h3>
+                <h3 class="card-title">Latest Orders</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -164,7 +164,7 @@
                     <tbody>
                     <tr>
                       <td><a href="pages/examples/invoice.html">P9842</a></td>
-                      <td>Cat food</td>
+                      <td>Jonas</td>
                       <td>
                         <div class="sparkbar" data-color="#00a65a" data-height="20">01-june-2020</div>
                       </td>
@@ -172,13 +172,13 @@
                          0324-1234568
                       </td>
                       <td>
-                        admin@gmail.com
+                        jonas@gmail.com
                       </td>
                       <td><span class="badge badge-success">$100</span></td>
                     </tr>
                     <tr>
                       <td><a href="pages/examples/invoice.html">P2842</a></td>
-                      <td>Dog neck cuffs</td>
+                      <td>Alex</td>
                       
                       <td>
                         <div class="sparkbar" data-color="#00a65a" data-height="20">14-june-2000</div>
@@ -187,13 +187,13 @@
                          0324-123564546
                       </td>
                       <td>
-                        john_wick@gmail.com
+                        alex@gmail.com
                       </td>
                       <td><span class="badge badge-success">$200</span></td>
                     </tr>
                     <tr>
                       <td><a href="pages/examples/invoice.html">P6742</a></td>
-                      <td>Cat Cushens</td>
+                      <td>Howdry</td>
                       
                       <td>
                         <div class="sparkbar" data-color="#00a65a" data-height="20">12-july-2000</div>
@@ -202,13 +202,13 @@
                          0324-189721
                       </td>
                       <td>
-                        eliy@gmail.com
+                        howdry@gmail.com
                       </td>
                       <td><span class="badge badge-success">$50</span></td>
                     </tr>
                     <tr>
                       <td><a href="pages/examples/invoice.html">P3242</a></td>
-                      <td>bird Cage</td>
+                      <td>Ellie</td>
                       
                       <td>
                         <div class="sparkbar" data-color="#00a65a" data-height="20">10-may-2020</div>
@@ -217,13 +217,13 @@
                          0324-1256734
                       </td>
                       <td>
-                        mak@gmail.com
+                        elie@gmail.com
                       </td>
                       <td><span class="badge badge-success">$1000</span></td>
                     </tr>
                     <tr>
                       <td><a href="pages/examples/invoice.html">P4142</a></td>
-                      <td>dog cage</td>
+                      <td>prince charlie</td>
                       <td>
                         <div class="sparkbar" data-color="#00a65a" data-height="20">04-august-2020</div>
                       </td>
@@ -237,7 +237,7 @@
                     </tr>
                     <tr>
                       <td><a href="pages/examples/invoice.html">P1242</a></td>
-                      <td>Cat food</td>
+                      <td>karlous</td>
                       
                       <td>
                         <div class="sparkbar" data-color="#00a65a" data-height="20">21-september-2020</div>
@@ -246,7 +246,7 @@
                          0324-1678154
                       </td>
                       <td>
-                        mic@gmail.com
+                        karlous@gmail.com
                       </td>
                       <td><span class="badge badge-success">$50</span></td>
                     </tr>
