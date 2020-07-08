@@ -118,8 +118,8 @@ session_start();
             <ul class="nav nav-treeview">
             <?php 
               if($_SESSION['user_status']=='vendor'){
-                echo '<li class="nav-item">
-                <a href="./vendor_profile.php" class="nav-link">
+                echo '<li class="menu-opt nav-item">
+                <a href="./vendor_profile.php" id="item-1" class="nav-link">
                   <i class="fa fa-user" ></i>
                   <p>My Profile</p>
                 </a>
@@ -127,8 +127,8 @@ session_start();
               }
             ?>
 
-              <li class="nav-item active">
-                <a href="./dashboard.php" class="nav-link active">
+              <li class="menu-opt nav-item active">
+                <a href="./dashboard.php" id="item-2" class="nav-link ">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -136,14 +136,14 @@ session_start();
                 </p>
               </a>
               </li>
-              <li class="nav-item">
-                <a href="./product.php" class="nav-link">
+              <li class="menu-opt nav-item">
+                <a href="./product.php" id="item-3" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
                   <p id="add-product">Add Product</p>
                 </a>
               </li>
-               <li class="nav-item">
-                <a href="./productlist.php" class="nav-link">
+               <li class="menu-opt nav-item">
+                <a href="./productlist.php" id="item-4" class="nav-link">
                   <i class="fa fa-th-list" ></i>
                   <p>All products</p>
                 </a>
@@ -152,7 +152,7 @@ session_start();
               <?php
               if($_SESSION['user_status']=='doctor'){
 
-                echo "<li class='nav-item'><a href='appoinments.php' class='nav-link'><i class='nav-icon fas fa-calendar-alt'></i><p>Appoinments<span class='badge badge-info right'>2</span></p></a></li>";
+                echo "<li class='menu-opt nav-item'><a href='appoinments.php' id='item-5' class='nav-link'><i class='nav-icon fas fa-calendar-alt'></i><p>Appoinments<span class='badge badge-info right'>2</span></p></a></li>";
               
                       
               }
