@@ -35,5 +35,7 @@
 <script src="<?php echo $SiteUrl; ?>admin/dist/js/demo.js"></script>
 <script src="<?php echo $SiteUrl; ?>admin/js/noty.js"></script>
 <script src="<?php echo $SiteUrl; ?>admin/js/mo.min.js"></script>
+<!-- custom script -->
+<script src="<?php echo $SiteUrl; ?>admin/js/script.js"></script>
 </body>
 </html>
