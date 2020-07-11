@@ -30,6 +30,8 @@
   <link rel="stylesheet" type="text/css" href="<?php echo $SiteUrl; ?>admin/css/noty.css">
   <link rel="stylesheet" type="text/css" href="<?php echo $SiteUrl; ?>admin/loader.css">
   <link rel="stylesheet" type="text/css" href="<?php echo $SiteUrl; ?>admin/admincustom.css">
+  <!-- Custom css -->
+  <link rel="stylesheet" type="text/css" href="<?php echo $SiteUrl; ?>admin/css/style.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
