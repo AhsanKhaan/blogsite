@@ -33,7 +33,7 @@
           </li>
 
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link">
+            <a href="./categories.php" class="nav-link">
               <p>Categories</p>
             </a>
           </li>
