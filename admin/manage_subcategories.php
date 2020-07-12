@@ -150,15 +150,13 @@
     </div>                              
 
 
-<div class="col-md-3">
-	<div class="form-group">
-		<label for=""></label>
-		<div class="custom-control custom-checkbox">
-          <input class="custom-control-input" type="checkbox" name="cat_displayhome" value="1" <?php echo isset($CategeryData['category_displayhome']) &&  $CategeryData['category_displayhome'] == 1 ? 'checked' : null; ?>>
-          <label for="customCheckbox1" class="custom-control-label">Display On Home</label>
-        </div>               
-	</div>
-</div>
+    <div class="col-md-3">
+    <br/>
+    <div class="custom-control custom-checkbox">
+     <input type="checkbox" id="subcat_displayhome"<?php echo isset($SubcategeryData['subcategory_displayhome']) &&  $SubcategeryData['subcategory_displayhome'] == 1 ? 'checked' : null; ?>  name="subcat_displayhome" value="1">
+     <label class="" for="subcat_displayhome">Display On Home</label>
+    </div>
+    </div>
 
 <div class="col-md-12">
 	<div class="form-group">
