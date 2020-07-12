@@ -170,10 +170,9 @@
 
 <div class="col-md-12">
 	<div class="form-group">
-  <label class="control-label" for="cat_longdesc">Long Description</label>
-      
-    <textarea id="textarea-ckeditor" rows="7" name="cat_longdesc" class="textarea form-control" placeholder="Long Description"><?php echo isset($CategeryData['category_longdesc']) ? stripslashes($CategeryData['category_longdesc']) : null; ?></textarea>
-        </div>
+    <label class="control-label" for="subcat_longdesc">Long Description</label>
+    <textarea id="textarea-ckeditor" rows="9" name="subcat_longdesc" class="textarea form-control" placeholder="Long Description"><?php echo isset($CategeryData['subcategory_longdesc']) ? stripslashes($CategeryData['subcategory_longdesc']) : null; ?></textarea>
+   </div>
     
 </div>
 
@@ -215,7 +214,7 @@
                <input type="hidden" name="cat_id" id="cat_id" value="<?php echo $CategeryData['category_id'] ?? null; ?>">
                     <div class="form-group form-actions">
                         <div class="col-md-9">
-<button type="submit" class="btn btn-primary">SUBMIT 
+<button type="submit" class="btn btn-info">SUBMIT 
               &nbsp; <svg style="display: none;" class="spinner" width="30" height="30" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
    <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
 </svg>
