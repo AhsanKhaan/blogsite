@@ -194,22 +194,15 @@
 	</div>
 
 	<div class="col-md-12">
-		  <div class="form-group name-group">
-                        <label class="control-label" for="metakeyword">Meta Keyword</label>
+		<div class="form-group name-group">
+      <label class="control-label" for="metakeyword">Meta Keyword</label>                        
+        <textarea <?php echo TypeLength(); ?> id="metakeyword" name="metakeyword" rows="3" class="form-control" placeholder="Meta Keyword"><?php echo $SubcategeryData['keyword'] ?? null; ?></textarea>
                         
-                          <textarea <?php echo TypeLength(); ?> id="metakeyword" name="metakeyword" rows="3" class="form-control" placeholder="Meta Keyword"><?php echo $CategeryData['keyword'] ?? null; ?></textarea>
-                        
-                    </div>
+    </div>
 	</div>
 </div>
-                   
 
 
-                   
-                     
-
-                   
- 
                <input type="hidden" name="cat_id" id="cat_id" value="<?php echo $CategeryData['category_id'] ?? null; ?>">
                     <div class="form-group form-actions">
                         <div class="col-md-9">
