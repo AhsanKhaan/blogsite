@@ -185,13 +185,12 @@
     </div>
 	</div>
 
+
 	<div class="col-md-12">
-		   <div class="form-group name-group">
-                        <label class="control-label" for="metadesc">Meta Description</label>
-                        
-                          <textarea <?php echo TypeLength(); ?> id="metadesc" name="metadesc" rows="3" class="form-control" placeholder="Meta Description"><?php echo $CategeryData['description'] ?? null; ?></textarea>
-                        
-                    </div>
+		<div class="form-group name-group">
+      <label class="control-label" for="metadesc">Meta Description</label>
+          <textarea <?php echo TypeLength(); ?> id="metadesc" name="metadesc" rows="3" class="form-control" placeholder="Meta Description"><?php echo $SubcategeryData['description'] ?? null; ?></textarea>
+    </div>
 	</div>
 
 	<div class="col-md-12">
