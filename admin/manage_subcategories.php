@@ -158,11 +158,12 @@
     </div>
     </div>
 
+
 <div class="col-md-12">
-	<div class="form-group">
-	 <label class="control-label" for="cat_shortdesc">Short Description</label>
+	<div class="form-group name-group">
+	 <label class="control-label" for="subcat_shortdesc">Short Description</label>
   
-      <textarea id="cat_shortdesc" name="cat_shortdesc" rows="3" class="form-control" placeholder="Short Description" <?php echo TypeLength(490); ?>><?php echo $CategeryData['category_shortdesc'] ?? null; ?></textarea>
+      <textarea id="subcat_shortdesc" name="subcat_shortdesc" rows="3" class="form-control" placeholder="Short Description" <?php echo TypeLength(495); ?>><?php echo $SubcategeryData['subcategory_shortdesc'] ?? null; ?></textarea>
     </div>
 </div>
 
