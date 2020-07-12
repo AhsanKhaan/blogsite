@@ -181,8 +181,8 @@
 <div class="col-md-12">
 	  <div class="form-group name-group">
             <label class="control-label" for="metatitle">Meta Title</label>
-                <input type="text" <?php echo TypeLength(); ?> id="metatitle" name="metatitle" class="form-control" placeholder="Meta Title" value="<?php echo $CategeryData['title'] ?? null; ?>">
-        </div>
+                <input type="text" <?php echo TypeLength(); ?> id="metatitle" name="metatitle" class="form-control" placeholder="Meta Title" value="<?php echo $SubcategeryData['title'] ?? null; ?>">
+    </div>
 	</div>
 
 	<div class="col-md-12">
