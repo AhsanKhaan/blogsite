@@ -141,17 +141,13 @@
     </div>
 
 
-<div class="col-md-3">
-	<div class="form-group">
-		<label for=""></label>
-		<div class="custom-control custom-checkbox">
-          <input class="custom-control-input" type="checkbox" <?php echo isset($CategeryData['category_status']) &&  $CategeryData['category_status'] == 1 ? 'checked' : null; ?>  name="cat_status" value="1">
-          <label for="customCheckbox2" class="custom-control-label">Category Status</label>
-        </div>
-		  
-                        
-	</div>
-</div>
+    <div class="col-md-3">
+    <br/>
+    <div class="custom-control custom-checkbox">
+     <input type="checkbox" id="subcat_status"<?php echo isset($SubcategeryData['subcategory_status']) &&  $SubcategeryData['subcategory_status'] == 1 ? 'checked' : null; ?>  name="subcat_status" value="1">
+     <label class="" for="subcat_status">Sub Category Status</label>
+    </div>
+    </div>                              
 
 
 <div class="col-md-3">
