@@ -45,9 +45,9 @@ $(function(){
            return false;
          }else{
            $('.subcatname-group input').css('border-color', '#dbe1e8');
-            for ( instance in CKEDITOR.instances ){
-               CKEDITOR.instances[instance].updateElement();
-             }
+            // for ( instance in CKEDITOR.instances ){
+            //    CKEDITOR.instances[instance].updateElement();
+            //  }
             $.ajax({
                 url: SendURL + "admin/back/SubCategory_Setting.php",
                 method:"POST",
