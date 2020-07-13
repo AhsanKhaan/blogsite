@@ -15,7 +15,7 @@
     
    <div class="content-wrapper">
    <div id="page-content">
-    <div class="content-header">
+    <!-- <div class="content-header">
         <div class="header-section">
             <h1>
                   <strong>All</strong> Categories
@@ -25,7 +25,7 @@
     <ul class="breadcrumb breadcrumb-top">
         <li>Admin</li>
         <li><a href="">Categories</a></li>
-    </ul>
+    </ul> -->
 
         <div class="col-md-12">
                 <!-- END Form Elements Title -->
@@ -38,6 +38,7 @@
                                 </div>
                                 <div class="col-2"></div>
                                 <div class="col-2 pull-right">
+                                <br/>
                                  <a href="<?php echo $SiteUrl ?>admin/manage_categories.php" class="btn btn-info btn-sm margin-right20 themebtn"><i class="fa fa-plus"></i> Add Category</a>
                                 </div>
                                 
