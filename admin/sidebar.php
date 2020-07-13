@@ -39,7 +39,7 @@
           </li>
 
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link">
+            <a href="./subcategories.php" class="nav-link">
               <p>Subcategories</p>
             </a>
           </li>
