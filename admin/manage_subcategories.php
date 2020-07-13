@@ -84,7 +84,7 @@
 	<div class="col-md-6 subcatname-group">
 		<div class="form-group subcatname-group">
 			<label class="control-label" for="subcat_name">SubCategory Name</label>
-				<input type="text" <?php echo TypeLength(); ?> id="subcat_name" name="subcat_name" class="form-control" placeholder="SubCategory Name" value="<?php echo $CategeryData['category_name'] ?? null; ?>">
+				<input type="text" <?php echo TypeLength(); ?> id="subcat_name" name="subcat_name" class="form-control" placeholder="SubCategory Name" value="<?php echo $SubcategeryData['subcategory_name'] ?? null; ?>">
 		</div>
 	</div>
 
@@ -101,21 +101,21 @@
 <div class="col-md-4">
     <div class="form-group name-group">
         <label class=" control-label" for="subcat_slug">SubCategory Slug</label>
-            <input type="text" <?php echo TypeLength(); ?> id="subcat_slug" name="subcat_slug" class="form-control" placeholder="SubCategory Slug" value="<?php echo $CategeryData['category_slug'] ?? null; ?>">
+            <input type="text" <?php echo TypeLength(); ?> id="subcat_slug" name="subcat_slug" class="form-control" placeholder="SubCategory Slug" value="<?php echo $SubcategeryData['subcategory_slug'] ?? null; ?>">
     </div>
 </div>
 
 <div class="col-md-4">
      <div class="form-group name-group">
         <label class="control-label" for="subcat_salecaption">Sale Caption</label>
-            <input type="text" <?php echo TypeLength(); ?> id="subcat_salecaption" name="subcat_salecaption" class="form-control" placeholder="Sale Caption" value="<?php echo $CategeryData['category_salecaption'] ?? null; ?>">
+            <input type="text" <?php echo TypeLength(); ?> id="subcat_salecaption" name="subcat_salecaption" class="form-control" placeholder="Sale Caption" value="<?php echo $SubcategeryData['subcategory_salecaption'] ?? null; ?>">
     </div>
 </div>
 
   <div class="col-md-4">
     <div class="form-group name-group">
       <label class="" for="subcat_price">SubCategory Price <small style="color:red;"><strong>(Percentage)</strong></small></label>
-      <input type="text" id="subcat_price" name="subcat_price" class="form-control" placeholder="SubCategory Price" value="<?php echo $CategeryData['price'] ?? null; ?>">
+      <input type="text" id="subcat_price" name="subcat_price" class="form-control" placeholder="SubCategory Price" value="<?php echo $SubcategeryData['price'] ?? null; ?>">
     </div>
   </div>
 
@@ -123,7 +123,7 @@
         
          <label class="control-label" for="subcat_sortorder">Sort Order</label>
         
-            <input type="text" id="subcat_sortorder" name="subcat_sortorder" class="form-control" placeholder="Sort Order" value="<?php echo $CategeryData['category_sort'] ?? null; ?>">
+            <input type="text" id="subcat_sortorder" name="subcat_sortorder" class="form-control" placeholder="Sort Order" value="<?php echo $SubcategeryData['subcategory_sort'] ?? null; ?>">
         
     </div>
 
@@ -158,7 +158,7 @@
 <div class="col-md-12">
 	<div class="form-group">
     <label class="control-label" for="subcat_longdesc">Long Description</label>
-    <textarea id="textarea-ckeditor" rows="9" name="subcat_longdesc" class="textarea form-control" placeholder="Long Description"><?php echo isset($CategeryData['subcategory_longdesc']) ? stripslashes($CategeryData['subcategory_longdesc']) : null; ?></textarea>
+    <textarea id="textarea-ckeditor" rows="9" name="subcat_longdesc" class="textarea form-control" placeholder="Long Description"><?php echo isset($SubcategeryData['subcategory_longdesc']) ? stripslashes($SubcategeryData['subcategory_longdesc']) : null; ?></textarea>
    </div>
     
 </div>
