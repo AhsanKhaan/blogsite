@@ -1,3 +1,8 @@
+<?php 
+ $url = explode('/',  $_SERVER['SCRIPT_NAME']);
+
+?>
+
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -26,23 +31,25 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="<?php echo $SiteUrl; ?>admin/dashboard.php" class="nav-link active">
+            <a href="<?php echo $SiteUrl; ?>admin/dashboard.php" class="nav-link <?php echo $url[2] == 'dashboard.php' ? 'active' : null; ?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Dashboard</p>
             </a>
           </li>
 
           <li class="nav-item has-treeview menu-open">
-            <a href="./categories.php" class="nav-link">
+            <a href="<?php echo $SiteUrl; ?>admin/categories.php" class="nav-link <?php echo $url[2] == 'categories.php' || $url[2]  == 'manage_categories.php' ? 'active' : null; ?>">
               <p>Categories</p>
             </a>
           </li>
 
           <li class="nav-item has-treeview menu-open">
-            <a href="./subcategories.php" class="nav-link">
+            <a href="<?php echo $SiteUrl; ?>admin/subcategories.php" class="nav-link <?php echo $url[2] == 'subcategories.php' || $url[2]  == 'manage_subcategories.php' ? 'active' : null; ?>">
               <p>Subcategories</p>
             </a>
           </li>
+
+
 
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
@@ -51,7 +58,7 @@
           </li>
 
         <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link">
+            <a href="<?php echo $SiteUrl; ?>admin/vendor.php" class="nav-link <?php echo $url[2] == 'vendor.php' || $url[2]  == 'manage_vendor.php' ? 'active' : null; ?>">
               <p>Manage Vendors</p>
             </a>
           </li>
