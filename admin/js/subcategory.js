@@ -11,9 +11,9 @@ $(function(){
 
     function ShowHideSpinner(time = ''){
       var setTime = $.trim(time) == '' ? 1000 : time;
-      $('#spinner').css('display', 'inline-block');
+      $('.spinner').css('display', 'inline-block');
       setTimeout(function(){
-          $('#spinner').css('display', 'none');
+          $('.spinner').css('display', 'none');
       }, setTime);
     }
 
@@ -56,10 +56,10 @@ $(function(){
                 cache:false,
                 processData:false,
                 beforeSend:function(){
-                  $('#spinner').css('display', 'inline-block');
+                  $('.spinner').css('display', 'inline-block');
                 },
                 success:function(data){
-                  $('#spinner').css('display', 'none');
+                  $('.spinner').css('display', 'none');
                   if($.trim(data) != 'success'){
                     loadNotification ('error', 'metroui', data , 3000);
                     return false;
