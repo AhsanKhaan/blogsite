@@ -55,7 +55,7 @@
                                             <th class="text-center">Image</th>
                                             <th class="text-center">Name</th>
                                             <th class="text-center">Status</th>
-                                            <th class="text-center">Home Status</th>
+                    
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
@@ -75,16 +75,14 @@
                                                     <td class="text-center"><a href="javascript:void(0)"><?php echo $Categories['category_name'] ?></a></td>
                                                     <td class="text-center"><label class="switch switch-success"><input type="checkbox" <?php echo $Categories['category_status'] == 1 ? 'checked' : null; ?>  name="cat_status" value="1" class="status" data-cat_id="<?php echo $Categories['category_id']; ?>"><span></span></label> </td>
                                                
-                                                    <td class="text-center">
-                                                         <label class="switch switch-success"><input type="checkbox" name="cat_displayhome" value="1" <?php echo $Categories['category_displayhome'] == 1 ? 'checked' : null; ?> class="display_status" data-cat_id="<?php echo $Categories['category_id']; ?>"><span></span></label>
-                                                    </td>
+                                                  
                                                     
-                                                    <td class="text-center">
-                                                        <div class="btn-group">
-                                                            <a href="<?php echo $SiteUrl ?>admin/manage_categories.php?catid=<?php echo $Categories['category_id']; ?>" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
-                                                            <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger deletecategory" data-cat_id="<?php echo $Categories['category_id']; ?>" ><i class="fa fa-times"></i></a>
-                                                        </div>
-                                                    </td>
+<td class="text-center">
+    <div class="btn-group">
+        <a href="<?php echo $SiteUrl ?>admin/manage_categories.php?catid=<?php echo $Categories['category_id']; ?>" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pen"></i></a>
+        <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger deletecategory" data-cat_id="<?php echo $Categories['category_id']; ?>" ><i class="fa fa-times"></i></a>
+    </div>
+</td>
                                                 </tr>
                                             <?php $count++; endwhile; ?>
                                         <?php endif ?>
