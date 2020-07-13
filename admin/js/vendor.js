@@ -1,7 +1,7 @@
 $(function(){
    var SendURL = $('#url').val();
-   function loadNotification (type, theme, message, time){
-      $.getScript( SendURL + "admin/assets/js/notification.js" )
+   function loadNotifivendorion (type, theme, message, time){
+      $.getScript( SendURL + "admin/assets/js/notifivendorion.js" )
       .done(function(script, textStatus ) {
         noty(type, theme, message, time);
       })
@@ -26,23 +26,23 @@ $(function(){
 
 	   $('#vendorform').submit(function(e){
         e.preventDefault();
-        var cat_name = $.trim($('#vendor_name').val());
-        if($.trim(cat_name) == ''){
-           $('.catname-group').addClass('animated ' + 'bounce').one('animationend oAnimationEnd webkitAnimationEnd mozAnimationEnd', function() {
+        var vendor_name = $.trim($('#vendor_name').val());
+        if($.trim(vendor_name) == ''){
+           $('.vendorname-group').addClass('animated ' + 'bounce').one('animationend oAnimationEnd webkitAnimationEnd mozAnimationEnd', function() {
            $(this).removeClass('animated ' + 'bounce')});
-           $('.catname-group input').css('border-color', 'red');
+           $('.vendorname-group input').css('border-color', 'red');
             ShowHideSpinner();
-            SmoothScroll('.catname-group');
+            SmoothScroll('.vendorname-group');
             return false;
          }else{
-           $('.catname-group input').css('border-color', '#dbe1e8');
+           $('.vendorname-group input').css('border-color', '#dbe1e8');
             // for ( instance in CKEDITOR.instances ){
             //    CKEDITOR.instances[instance].updateElement();
             //  }
             $.ajax({
                 url: SendURL + "admin/back/Vendor_Setting.php",
                 method:"POST",
-                data: new FormData($('#categoryform')[0]),
+                data: new FormData($('#vendorform')[0]),
                 contentType:false,
                 cache:false,
                 processData:false,
@@ -57,7 +57,7 @@ $(function(){
                     loadNotification ('error', 'metroui', data , 3000);
                     return false;
                   }else{
-                     window.location = SendURL + 'admin/categories.php';
+                     window.location = SendURL + 'admin/vendor.php';
                     return false;
                   }
                 }
@@ -65,11 +65,11 @@ $(function(){
         }
     });
 
-     function SendStatus(value, action, cat_id){
+     function SendStatus(value, action, vendor_id){
          $.ajax({
-           url:SendURL + "admin/back/Category_Setting.php",
+           url:SendURL + "admin/back/Vendor_Setting.php",
            method:"POST",
-           data:{value:value, action:action, cat_id:cat_id},
+           data:{value:value, action:action, vendor_id:vendor_id},
            success:function(data){
               loadNotification ('success', 'metroui', "Status Has Been Changed Successfully" , 3000);
            }
@@ -77,14 +77,14 @@ $(function(){
      }
      $(document).on('change', '.status', function(){
        var value = $(this).is(":checked") ? 1 : 0;
-       var cat_id = $(this).data("cat_id");
-       SendStatus(value, 'Status', cat_id);
+       var vendor_id = $(this).data("vendor_id");
+       SendStatus(value, 'Status', vendor_id);
      });  
     
      $(document).on('change', '.display_status', function(){
        var value = $(this).is(":checked") ? 1 : 0;
-       var cat_id = $(this).data('cat_id');
-       SendStatus(value, 'HomeStatus', cat_id);
+       var vendor_id = $(this).data('vendor_id');
+       SendStatus(value, 'HomeStatus', vendor_id);
      });  
 
      $('.allcheckbox').click(function(){
@@ -125,9 +125,9 @@ $(function(){
           }).then((result) => {
             if (result.value) {
                $.ajax({
-                  url:SendURL + "admin/back/Category_Setting.php",
+                  url:SendURL + "admin/back/Vendor_Setting.php",
                   method:"POST",
-                  data:{catids:CheckedValue, action:"DeleteBulkRecord"},
+                  data:{vendorids:CheckedValue, action:"DeleteBulkRecord"},
                   success:function(data){
                     if($.trim(data) != 'success'){
                        loadNotification ('error', 'metroui', data , 3000);
@@ -158,8 +158,8 @@ $(function(){
        }
      });  
 
-     $(document).on('click', '.deletecategory', function(){
-       var value = $(this).data('cat_id');
+     $(document).on('click', '.deletevendor', function(){
+       var value = $(this).data('vendor_id');
        var element = $(this);
         Swal.fire({
         title: 'Are you sure?',
@@ -172,9 +172,9 @@ $(function(){
       }).then((result) => {
         if (result.value) {
           $.ajax({
-            url:SendURL + "admin/back/Category_Setting.php",
+            url:SendURL + "admin/back/Vendor_Setting.php",
             method:"POST",
-            data:{catid:value, action:"DeleteSingleRecord"},
+            data:{vendorid:value, action:"DeleteSingleRecord"},
             success:function(data){
               if($.trim(data) != 'success'){
                 loadNotification ('error', 'metroui', data , 3000);

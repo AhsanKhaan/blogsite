@@ -1,11 +1,11 @@
 <?php 
   include('inc/config.php');
   include 'inc/Authorize.php'; 
-  $PageTitle = ' Categories | ';
+  $PageTitle = ' Vendor | ';
   include('header.php');
   include('sidebar.php');
   include('topbar.php');  
-  $AllCategoriesQuery = mysqli_query($conn, "SELECT * FROM category WHERE del_status = 0 ORDER BY category_sort ASC");
+  $AllVendorQuery = mysqli_query($conn, "SELECT * FROM vendor WHERE del_status = 0 ORDER BY vendor_sort ASC");
   
 ?>
 <style>
@@ -31,15 +31,15 @@
                 <!-- END Form Elements Title -->
                    <!-- Datatables Content -->
                         <div class="block full">
-                            <div class="block-title category-wrapper row">
+                            <div class="block-title vendor-wrapper row">
                                 <div class="display-4 col-8">
-                                    <strong>Categories</strong> List
+                                    <strong>Vendor</strong> List
                                     &nbsp; <a href="javascript:;" class="btn btn-xs btn-danger btn-sm margin-right20 themebtn deleteall" style="display: none;">Delete All</a>
                                 </div>
                                 <div class="col-2"></div>
                                 <div class="col-2 pull-right">
                                 <br/>
-                                 <a href="<?php echo $SiteUrl ?>admin/manage_categories.php" class="btn btn-info btn-sm margin-right20 themebtn"><i class="fa fa-plus"></i> Add Category</a>
+                                 <a href="<?php echo $SiteUrl ?>admin/manage_vendor.php" class="btn btn-info btn-sm margin-right20 themebtn"><i class="fa fa-plus"></i> Add Vendor</a>
                                 </div>
                                 
                             </div>
@@ -53,34 +53,34 @@
                                             <th class="text-center"><input type="checkbox" class="allcheckbox" value=""></th>
                                             <th class="text-center">S.no</th>
                                             <th class="text-center">Image</th>
-                                            <th class="text-center">Name</th>
+                                            <th class="text-center">Vendor Name</th>
                                             <th class="text-center">Status</th>
                     
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php if (mysqli_num_rows($AllCategoriesQuery) > 0): $count = 1;?>
-                                            <?php while($Categories = mysqli_fetch_assoc($AllCategoriesQuery)): ?>
+                                        <?php if (mysqli_num_rows($AllVendorQuery) > 0): $count = 1;?>
+                                            <?php while($Vendor = mysqli_fetch_assoc($AllVendorQuery)): ?>
                                                  <tr>
-                                                    <td class="text-center"><input type="checkbox" class="colcheckbox" name="colcheckbox[]" value="<?php echo $Categories['category_id']; ?>"></td>
+                                                    <td class="text-center"><input type="checkbox" class="colcheckbox" name="colcheckbox[]" value="<?php echo $Vendor['vendor_id']; ?>"></td>
                                                     <td class="text-center"><?php echo $count;  ?></td>
                                                     <td class="text-center"><a href="javascript:void(0)">
-<?php if ($Categories['category_imgsm'] == null || !file_exists('../' . $Categories['category_imgsm'])): ?>
+<?php if ($Vendor['vendor_imgsm'] == null || !file_exists('../' . $Vendor['vendor_imgsm'])): ?>
      <small><strong>No Image Uploaded</strong></small>
     <?php else: ?>
-        <img src="<?php echo $SiteUrl . $Categories['category_imgsm']; ?>" alt="Category Image" style="height: 30px; object-fit: cover;">
+        <img src="<?php echo $SiteUrl . $Vendor['vendor_imgsm']; ?>" alt="vendor Image" style="height: 30px; object-fit: cover;">
 <?php endif ?>
                                                     </a></td>
-                                                    <td class="text-center"><a href="javascript:void(0)"><?php echo $Categories['category_name'] ?></a></td>
-                                                    <td class="text-center"><label class="switch switch-success"><input type="checkbox" <?php echo $Categories['category_status'] == 1 ? 'checked' : null; ?>  name="cat_status" value="1" class="status" data-cat_id="<?php echo $Categories['category_id']; ?>"><span></span></label> </td>
+                                                    <td class="text-center"><a href="javascript:void(0)"><?php echo $Vendor['vendor_name'] ?></a></td>
+                                                    <td class="text-center"><label class="switch switch-success"><input type="checkbox" <?php echo $Vendor['vendor_status'] == 1 ? 'checked' : null; ?>  name="vendor_status" value="1" class="status" data-vendor_id="<?php echo $Vendor['vendor_id']; ?>"><span></span></label> </td>
                                                
                                                   
                                                     
 <td class="text-center">
     <div class="btn-group">
-        <a href="<?php echo $SiteUrl ?>admin/manage_categories.php?catid=<?php echo $Categories['category_id']; ?>" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pen"></i></a>
-        <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger deletecategory" data-cat_id="<?php echo $Categories['category_id']; ?>" ><i class="fa fa-times"></i></a>
+        <a href="<?php echo $SiteUrl ?>admin/manage_Vendor.php?vendorid=<?php echo $Vendor['vendor_id']; ?>" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pen"></i></a>
+        <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger deletevendor" data-vendor_id="<?php echo $Vendor['vendor_id']; ?>" ><i class="fa fa-times"></i></a>
     </div>
 </td>
                                                 </tr>
@@ -107,6 +107,6 @@
   include('footer.php');
 ?>
   <script src="<?php echo $SiteUrl; ?>admin/js/sweetalert2.js"></script>
-  <script src="<?php echo $SiteUrl; ?>admin/js/category.js"></script>
+  <script src="<?php echo $SiteUrl; ?>admin/js/vendor.js"></script>
   <script src="<?php echo $SiteUrl; ?>admin/js/pages/tablesDatatables.js"></script>
   <script>$(function(){ TablesDatatables.init(); });</script>
