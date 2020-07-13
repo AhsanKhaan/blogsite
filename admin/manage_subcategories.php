@@ -22,13 +22,6 @@
                         exit();
                     }
                  ?>
-                <h1>
-                      <strong><?php echo $SubcategeryData['subcategory_name']; ?></strong> Subcategory
-                </h1>
-                <?php else: ?>
-                <h1>
-                      <strong>Add New</strong> Subcategory
-                </h1>
             <?php endif ?>
         </div>
     </div>
@@ -36,21 +29,18 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Manage Categories</h1>
+            <h1>Manage Subcategories</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo $SiteUrl; ?>admin/dashboard.php">dashboard</a></li>
-              <li class="breadcrumb-item active">Categories Form</li>
+              <li class="breadcrumb-item"><a href="<?php echo $SiteUrl; ?>admin/dashboard.php">Dashboard</a></li>
+              <li class="breadcrumb-item active">Subcategories Form</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
-    <ul class="breadcrumb breadcrumb-top">
-        <li>Sub Categories</li>
-        <li><a href="">Manage Sub Categories</a></li>
-    </ul>
+    
 <div class="col-md-12">   
             <!-- general form elements -->
             <div class="card card-info">
@@ -61,39 +51,35 @@
               <!-- form start -->
               <form id="subcategoryform" enctype="multipart/form-data" class="form-horizontal form-bordered">
                 <div class="card-body">
-                <div class="form-group category-group">
-                        <label class="col-md-3 control-label" for="cat_image">Select Category</label>
-                        <div class="col-md-9">
-                        <?php 
-                            $CategoryQuery = mysqli_query($conn, "SELECT * FROM category WHERE category_status = 1");
-                        ?>    
-                        <select name="category-chosen" class="categorySelect select-chosen" data-placeholder="Select Category.." style="width: 250px;">
-                            <?php if (mysqli_num_rows($CategoryQuery) > 0): ?>
-                                <option value=""></option>
-                                <?php while($Category = mysqli_fetch_assoc($CategoryQuery)): ?>
-                                    <option <?php echo isset($SubcategeryData['category_id']) && $SubcategeryData['category_id'] == $Category['category_id'] ? 'selected' : null; ?> value="<?php echo $Category['category_id']; ?>"><?php echo $Category['category_name']; ?></option>
-                                <?php endwhile; ?>
-                                
-                                <?php else: ?>
-                                <option value=""></option>
-                                <option value="">No Categories Are Active</option>
-                            <?php endif ?>
-                        </select>
-                         
-                        </div>
-                    </div>
+
 
 
 <div class="row">
-	<div class="col-md-3">
-		<div class="form-group name-group">
-			<label class="control-label" for="subcat_image">SubCategory Image</label>
-			<div class="col-md-3">
-				<input type="file" id="subcat_image" name="subcat_image" value="">
-			</div>
-		</div>
-	</div>
+
 	
+<div class="col-md-3">
+      <div class="form-group category-group">
+            <label class="control-label" for="cat_image">Select Category</label>
+            
+            <?php 
+                $CategoryQuery = mysqli_query($conn, "SELECT * FROM category WHERE category_status = 1");
+            ?>    
+            <select name="category-chosen" class="form-control categorySelect">
+                <?php if (mysqli_num_rows($CategoryQuery) > 0): ?>
+                    <option value="">Please Select Category</option>
+                    <?php while($Category = mysqli_fetch_assoc($CategoryQuery)): ?>
+                        <option <?php echo isset($SubcategeryData['category_id']) && $SubcategeryData['category_id'] == $Category['category_id'] ? 'selected' : null; ?> value="<?php echo $Category['category_id']; ?>"><?php echo $Category['category_name']; ?></option>
+                    <?php endwhile; ?>
+                    
+                    <?php else: ?>
+                    <option value=""></option>
+                    <option value="">No Categories Are Active</option>
+                <?php endif ?>
+            </select>
+             
+            
+        </div>
+</div>
 
 	<div class="col-md-6 subcatname-group">
 		<div class="form-group subcatname-group">
@@ -101,26 +87,37 @@
 				<input type="text" <?php echo TypeLength(); ?> id="subcat_name" name="subcat_name" class="form-control" placeholder="SubCategory Name" value="<?php echo $CategeryData['category_name'] ?? null; ?>">
 		</div>
 	</div>
-	<div class="col-md-3">
-		<div class="form-group name-group">
-			<label class="" for="subcat_price">SubCategory Price <small style="color:red;"><strong>(Percentage)</strong></small></label>
-			<input type="text" id="subcat_price" name="subcat_price" class="form-control" placeholder="SubCategory Price" value="<?php echo $CategeryData['price'] ?? null; ?>">
-		</div>
-	</div>
 
-<div class="col-md-6">
+  <div class="col-md-3">
+    <div class="form-group name-group">
+      <label class="control-label" for="subcat_image">SubCategory Image</label>
+      <div class="col-md-3">
+        <input type="file" id="subcat_image" name="subcat_image" value="">
+      </div>
+    </div>
+  </div>
+
+
+<div class="col-md-4">
     <div class="form-group name-group">
         <label class=" control-label" for="subcat_slug">SubCategory Slug</label>
             <input type="text" <?php echo TypeLength(); ?> id="subcat_slug" name="subcat_slug" class="form-control" placeholder="SubCategory Slug" value="<?php echo $CategeryData['category_slug'] ?? null; ?>">
     </div>
 </div>
 
-<div class="col-md-6">
+<div class="col-md-4">
      <div class="form-group name-group">
         <label class="control-label" for="subcat_salecaption">Sale Caption</label>
             <input type="text" <?php echo TypeLength(); ?> id="subcat_salecaption" name="subcat_salecaption" class="form-control" placeholder="Sale Caption" value="<?php echo $CategeryData['category_salecaption'] ?? null; ?>">
     </div>
 </div>
+
+  <div class="col-md-4">
+    <div class="form-group name-group">
+      <label class="" for="subcat_price">SubCategory Price <small style="color:red;"><strong>(Percentage)</strong></small></label>
+      <input type="text" id="subcat_price" name="subcat_price" class="form-control" placeholder="SubCategory Price" value="<?php echo $CategeryData['price'] ?? null; ?>">
+    </div>
+  </div>
 
 <div class="col-md-6">
         
@@ -194,14 +191,15 @@
 
 <input type="hidden" name="csrf" id="csrf" value="<?php echo GenerateCSRF();  ?>">
                <input type="hidden" name="subcat_id" id="subcat_id" value="<?php echo $SubcategeryData['subcategory_id'] ?? null; ?>">
-                    <div class="form-group form-actions">
-                        <div class="col-md-9 col-md-offset-3">
-                          <?php $ButtonText = 'Submit'; ?>
-                          <?php $DisabledSubmitBTN = TRUE; ?>
-                          <?php $SubmitBTNClass = 'subcategorybtn '; ?>
-                          <?php include('inc/spinnerbutton.php'); ?>
-                        </div>
-                    </div>           
+<div class="form-group form-actions">
+  <div class="col-md-9">
+    <button type="submit" class="btn btn-primary">SUBMIT
+    &nbsp; <svg style="display: none;" class="spinner" width="30" height="30" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+      <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+    </svg>
+    </button>
+  </div>
+                    </div>         
               </form>
             </div>
             <!-- /.card -->
