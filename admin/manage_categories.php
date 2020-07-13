@@ -97,8 +97,8 @@
 	<div class="form-group">
 		<label for=""></label>
 		<div class="custom-control custom-checkbox">
-          <input class="custom-control-input" type="checkbox" <?php echo isset($CategeryData['category_status']) &&  $CategeryData['category_status'] == 1 ? 'checked' : null; ?>  name="cat_status" value="1">
-          <label for="customCheckbox2" class="custom-control-label">Category Status</label>
+          <input type="checkbox" <?php echo isset($CategeryData['category_status']) &&  $CategeryData['category_status'] == 1 ? 'checked' : null; ?>  name="cat_status" value="1">
+          <label for="customCheckbox2" class="">Category Status</label>
         </div>
 		  
                         
@@ -110,8 +110,8 @@
 	<div class="form-group">
 		<label for=""></label>
 		<div class="custom-control custom-checkbox">
-          <input class="custom-control-input" type="checkbox" name="cat_displayhome" value="1" <?php echo isset($CategeryData['category_displayhome']) &&  $CategeryData['category_displayhome'] == 1 ? 'checked' : null; ?>>
-          <label for="customCheckbox1" class="custom-control-label">Display On Home</label>
+          <input type="checkbox"   name="cat_displayhome" value="1" <?php echo isset($CategeryData['category_displayhome']) &&  $CategeryData['category_displayhome'] == 1 ? 'checked' : null; ?>>
+          <label for="customCheckbox1" class="">Display On Home</label>
         </div>               
 	</div>
 </div>
