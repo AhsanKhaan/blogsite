@@ -10,8 +10,8 @@
 ?>
 <?php if (isset($_GET['vendorid'])): ?>
     <?php 
-        $vendorid = preg_replace('/[^0-9]/', '-', $_GET['vendor_id']);
-        $VendorData = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM Vendor WHERE Vendor_id = ".$vendorid.""));
+        $vendorid = preg_replace('/[^0-9]/', '-', $_GET['vendorid']);
+        $VendorData = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM Vendor WHERE id = ".$vendorid.""));
         if(!isset($VendorData)){
             echo '<script> window.location = "'.$SiteUrl.'admin/vendor.php"; </script>';
             exit();

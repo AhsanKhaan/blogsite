@@ -66,13 +66,14 @@
 		sleep(1);
 		$vendor_name = mysqli_real_escape_string($conn, CleanString($_POST['vendor_name']));
 		$vendor_slug = GenerateSlug(mysqli_real_escape_string($conn, CleanString($_POST['vendor_slug'])), $vendor_name);
-		$vendor_salecaption = mysqli_real_escape_string($conn, CleanString($_POST['vendor_salecaption']));
+		$vendor_email = mysqli_real_escape_string($conn, CleanString($_POST['vendor_email']));
 		$vendor_status = isset($_POST['vendor_status']) ? mysqli_real_escape_string($conn, CleanString($_POST['vendor_status'])) : 0;
 		$vendor_displayhome = isset($_POST['vendor_displayhome']) ? mysqli_real_escape_string($conn, CleanString($_POST['vendor_displayhome'])) : 0;
 
-		$vendor_price = !empty($_POST['vendor_price']) ? mysqli_real_escape_string($conn, CleanString($_POST['vendor_price'])) : 0;
+		$vendor_phone = !empty($_POST['vendor_phone']) ? mysqli_real_escape_string($conn, CleanString($_POST['vendor_phone'])) : 0;
 		
-		$vendor_sortorder = !empty(trim($_POST['vendor_sortorder'])) ? mysqli_real_escape_string($conn, CleanString($_POST['vendor_sortorder'])) : 0 ;
+		// $vendor_sortorder = !empty(trim($_POST['vendor_sortorder'])) ? mysqli_real_escape_string($conn, CleanString($_POST['vendor_sortorder'])) : 0 ;
+		$vendor_address = mysqli_real_escape_string($conn, CleanString($_POST['vendor_address']));
 		$vendor_shortdesc = mysqli_real_escape_string($conn, CleanString($_POST['vendor_shortdesc']));
 		$vendor_longdesc = mysqli_real_escape_string($conn, addslashes($_POST['vendor_longdesc']));
 		$metatitle = SetEmptyFields(mysqli_real_escape_string($conn, CleanString($_POST['metatitle'])), $vendor_name);
@@ -86,18 +87,18 @@
 				if(isset($vendor_id) && !empty($vendor_id)){
 					// Update Record
 					 mysqli_query($conn, "UPDATE vendor SET 
-					 	`name` = '".$vendor_name."',
+					 	`vendor_name` = '".$vendor_name."',
 					 	`vendor_slug` = '".$vendor_slug."',
 					 	`vendor_shortdesc` = '".$vendor_shortdesc."',
 					 	`vendor_longdesc` = '".$vendor_longdesc."',
-					 	`vendor_sort` = ".$vendor_sortorder.",
-					 	`price` = ".$vendor_price.",
+					 	`vendor_address` = ".$vendor_address.",
+					 	`vendor_phone` = ".$vendor_phone.",
 					 	`vendor_status` = ".$vendor_status.",
 					 	`vendor_displayhome` = ".$vendor_displayhome.",
-					 	`vendor_salecaption` = '".$vendor_salecaption."',
-					 	`title` = '".$metatitle."',
-					 	`keyword` = '".$metakeyword."',
-					 	`description` = '".$metadesc."'
+					 	`vendor_email` = '".$vendor_email."',
+					 	`metatitle` = '".$metatitle."',
+					 	`metakeyword` = '".$metakeyword."',
+					 	`metadescription` = '".$metadesc."'
 					 	 WHERE vendor_id = ".$vendor_id."");
 					 	$Catgory_ID = $vendor_id;
 			 		 $VendorData = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM vendor WHERE vendor_id = ".$Catgory_ID.""));
@@ -108,14 +109,14 @@
 					 	`vendor_slug` = '".$vendor_slug."',
 					 	`vendor_shortdesc` = '".$vendor_shortdesc."',
 					 	`vendor_longdesc` = '".$vendor_longdesc."',
-					 	`vendor_sort` = ".$vendor_sortorder.",
-					 	`price` = ".$vendor_price.",
+					 	`vendor_address` = ".$vendor_address.",
+					 	`vendor_phone` = ".$vendor_phone.",
 					 	`vendor_status` = ".$vendor_status.",
 					 	`vendor_displayhome` = ".$vendor_displayhome.",
-					 	`vendor_salecaption` = '".$vendor_salecaption."',
-					 	`title` = '".$metatitle."',
-					 	`keyword` = '".$metakeyword."',
-					 	`description` = '".$metadesc."'");
+					 	`vendor_email` = '".$vendor_email."',
+					 	`metatitle` = '".$metatitle."',
+					 	`metakeyword` = '".$metakeyword."',
+					 	`metadescription` = '".$metadesc."'");
 					 $Catgory_ID = mysqli_insert_id($conn);
 				}
 
