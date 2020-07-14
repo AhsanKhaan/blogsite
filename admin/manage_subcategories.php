@@ -59,12 +59,12 @@
 	
 <div class="col-md-3">
       <div class="form-group category-group">
-            <label class="control-label" for="cat_image">Select Category</label>
+            <label class="control-label" for="cat_dropdown">Select Category</label>
             
             <?php 
                 $CategoryQuery = mysqli_query($conn, "SELECT * FROM category WHERE category_status = 1");
             ?>    
-            <select name="category-chosen" class="form-control categorySelect">
+            <select name="category-chosen" class="form-control categorySelect" id="cat_dropdown">
                 <?php if (mysqli_num_rows($CategoryQuery) > 0): ?>
                     <option value="">Please Select Category</option>
                     <?php while($Category = mysqli_fetch_assoc($CategoryQuery)): ?>
