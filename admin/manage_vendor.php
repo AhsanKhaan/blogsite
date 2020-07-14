@@ -71,22 +71,32 @@
 </div>
 
 <div class="col-md-6">
-     <div class="form-group name-group">
-        <label class="control-label" for="vendor_salecaption">Sale Caption</label>
-       
-            <input type="text" <?php echo TypeLength(); ?> id="vendor_salecaption" name="vendor_salecaption" class="form-control" placeholder="Sale Caption" value="<?php echo $VendorData['vendor_salecaption'] ?? null; ?>">
-
+ <label class="control-label" for="vendor_email">Vendor email</label>
+  <div class=" input-group ">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><i class="fas fa-envelope"></i></span>
     </div>
+   <input type="email" <?php echo TypeLength(); ?> id="vendor_email" name="vendor_email" class="form-control" placeholder="Enter Email" value="<?php echo $VendorData['vendor_email'] ?? null; ?>">
+  </div>
 </div>
 
+
 <div class="col-md-6">
+ <label class="control-label" for="vendor_phone">Vendor phone</label>
+  <div class=" input-group ">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><i class="fas fa-phone"></i></span>
+    </div>
+   <input type="text" <?php echo TypeLength(); ?> id="vendor_phone" name="vendor_phone" class="form-control" placeholder="Enter Phone Number" value="<?php echo $VendorData['vendor_phone'] ?? null; ?>">
+  </div>
+</div>
+<!-- <div class="col-md-6">
         
          <label class="control-label" for="vendor_sortorder">Sort Order</label>
         
             <input type="text" id="vendor_sortorder" name="vendor_sortorder" class="form-control" placeholder="Sort Order" value="<?php echo $VendorData['vendor_sort'] ?? null; ?>">
         
-    </div>
-
+    </div> -->
 
 <div class="col-md-3">
 	<div class="form-group">
@@ -109,6 +119,16 @@
           <label for="customCheckbox1" class="">Display On Home</label>
         </div>               
 	</div>
+</div>
+
+<div class="col-md-12 mb-3">
+ <label class="control-label" for="vendor_address">Address</label>
+  <div class=" input-group ">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><i class="fas fa-map-marker"></i></span>
+    </div>
+   <input type="text"  id="vendor_address" name="vendor_address" class="form-control" placeholder="Enter your address" value="<?php echo $VendorData['vendor_address'] ?? null; ?>">
+  </div>
 </div>
 
 <div class="col-md-12">
