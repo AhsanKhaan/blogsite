@@ -5,7 +5,7 @@
   include('header.php');
   include('sidebar.php');
   include('topbar.php');  
-  $AllVendorQuery = mysqli_query($conn, "SELECT * FROM vendor WHERE del_status = 0 ORDER BY vendor_sort ASC");
+  $AllVendorQuery = mysqli_query($conn, "SELECT * FROM vendor WHERE del_status = 0 ORDER BY vendor_name ASC");
   
 ?>
 <style>
@@ -60,8 +60,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php var_dump($AllVendorQuery);
-                                    exit();?>
+ 
                                         <?php if (mysqli_num_rows($AllVendorQuery) > 0): $count = 1;?>
                                             <?php while($Vendor = mysqli_fetch_assoc($AllVendorQuery)): ?>
                                                  <tr>
