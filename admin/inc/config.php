@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$SiteUrl = 'http://localhost/petshop/';
+$SiteUrl = 'http://local.pets.com/';
 $AssetsUrl = '/';
 ini_set('display_errors', 1);
 error_reporting(E_ALL);

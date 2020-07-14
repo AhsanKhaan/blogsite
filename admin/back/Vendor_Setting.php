@@ -115,7 +115,8 @@
 					 	`vendor_status` = ".$vendor_status.",
 					 	`vendor_email` = '".$vendor_email."',
 					 	`metatitle` = '".$metatitle."',
-					 	`metakeyword` = '".$metakeyword."',
+						`metakeyword` = '".$metakeyword."',
+						`del_status` = 0, 
 					 	`metadesc` = '".$metadesc."'");
 					 $Catgory_ID = mysqli_insert_id($conn);
 				}
