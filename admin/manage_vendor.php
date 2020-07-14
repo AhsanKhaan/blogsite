@@ -135,7 +135,7 @@
 	<div class="form-group">
 	 <label class="control-label" for="vendor_shortdesc">Short Description</label>
   
-      <textarea id="vendor_shortdesc" name="vendor_shortdesc" rows="3" class="form-control" placeholder="Short Description" <?php echo TypeLength(490); ?>><?php echo $VendorData['vendor_shortdesc'] ?? null; ?></textarea>
+      <textarea id="vendor_shortdesc" name="vendor_shortdesc" rows="3" class="form-control" placeholder="Short Description" <?php echo TypeLength(490); ?>><?php echo $VendorData['vendor_shortdisc'] ?? null; ?></textarea>
     </div>
 </div>
 
@@ -144,7 +144,7 @@
 	<div class="form-group">
   <label class="control-label" for="vendor_longdesc">Long Description</label>
       
-    <textarea id="textarea-ckeditor" rows="7" name="vendor_longdesc" class="textarea form-control" placeholder="Long Description"><?php echo isset($VendorData['vendor_longdesc']) ? stripslashes($VendorData['vendor_longdesc']) : null; ?></textarea>
+    <textarea id="textarea-ckeditor" rows="7" name="vendor_longdesc" class="textarea form-control" placeholder="Long Description"><?php echo isset($VendorData['vendor_longdisc']) ? stripslashes($VendorData['vendor_longdisc']) : null; ?></textarea>
         </div>
     
 </div>
@@ -154,7 +154,7 @@
 <div class="col-md-12">
 	  <div class="form-group name-group">
             <label class="control-label" for="metatitle">Meta Title</label>
-                <input type="text" <?php echo TypeLength(); ?> id="metatitle" name="metatitle" class="form-control" placeholder="Meta Title" value="<?php echo $VendorData['title'] ?? null; ?>">
+                <input type="text" <?php echo TypeLength(); ?> id="metatitle" name="metatitle" class="form-control" placeholder="Meta Title" value="<?php echo $VendorData['metatitle'] ?? null; ?>">
         </div>
 	</div>
 
@@ -162,7 +162,7 @@
 		   <div class="form-group name-group">
                         <label class="control-label" for="metadesc">Meta Description</label>
                         
-                          <textarea <?php echo TypeLength(); ?> id="metadesc" name="metadesc" rows="3" class="form-control" placeholder="Meta Description"><?php echo $VendorData['description'] ?? null; ?></textarea>
+                          <textarea <?php echo TypeLength(); ?> id="metadesc" name="metadesc" rows="3" class="form-control" placeholder="Meta Description"><?php echo $VendorData['metadesc'] ?? null; ?></textarea>
                         
                     </div>
 	</div>
@@ -171,7 +171,7 @@
 		  <div class="form-group name-group">
                         <label class="control-label" for="metakeyword">Meta Keyword</label>
                         
-                          <textarea <?php echo TypeLength(); ?> id="metakeyword" name="metakeyword" rows="3" class="form-control" placeholder="Meta Keyword"><?php echo $VendorData['keyword'] ?? null; ?></textarea>
+                          <textarea <?php echo TypeLength(); ?> id="metakeyword" name="metakeyword" rows="3" class="form-control" placeholder="Meta Keyword"><?php echo $VendorData['metakeyword'] ?? null; ?></textarea>
                         
                     </div>
 	</div>
