@@ -1,7 +1,7 @@
 $(function(){
    var SendURL = $('#url').val();
    function loadNotification (type, theme, message, time){
-      $.getScript( SendURL + "admin/assets/js/notifivendorion.js" )
+      $.getScript( SendURL + "admin/js/notification.js" )
       .done(function(script, textStatus ) {
         noty(type, theme, message, time);
       })

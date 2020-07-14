@@ -63,6 +63,7 @@
 
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST' AND isset($_POST)){
+
 		sleep(1);
 		$vendor_name = mysqli_real_escape_string($conn, CleanString($_POST['vendor_name']));
 		$vendor_slug = GenerateSlug(mysqli_real_escape_string($conn, CleanString($_POST['vendor_slug'])), $vendor_name);
@@ -107,16 +108,15 @@
 					 mysqli_query($conn, "INSERT INTO vendor SET 
 					 	`vendor_name` = '".$vendor_name."',
 					 	`vendor_slug` = '".$vendor_slug."',
-					 	`vendor_shortdesc` = '".$vendor_shortdesc."',
-					 	`vendor_longdesc` = '".$vendor_longdesc."',
-					 	`vendor_address` = ".$vendor_address.",
+					 	`vendor_shortdisc` = '".$vendor_shortdesc."',
+					 	`vendor_longdisc` = '".$vendor_longdesc."',
+					 	`vendor_address` = '".$vendor_address."',
 					 	`vendor_phone` = ".$vendor_phone.",
 					 	`vendor_status` = ".$vendor_status.",
-					 	`vendor_displayhome` = ".$vendor_displayhome.",
 					 	`vendor_email` = '".$vendor_email."',
 					 	`metatitle` = '".$metatitle."',
 					 	`metakeyword` = '".$metakeyword."',
-					 	`metadescription` = '".$metadesc."'");
+					 	`metadesc` = '".$metadesc."'");
 					 $Catgory_ID = mysqli_insert_id($conn);
 				}
 
