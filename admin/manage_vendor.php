@@ -184,7 +184,7 @@
 
                    
  
-               <input type="hidden" name="vendor_id" id="vendor_id" value="<?php echo $VendorData['vendor_id'] ?? null; ?>">
+               <input type="hidden" name="vendor_id" id="vendor_id" value="<?php echo $VendorData['id'] ?? null; ?>">
                     <div class="form-group form-actions">
                         <div class="col-md-9">
 <button type="submit" class="btn btn-primary">SUBMIT 

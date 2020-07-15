@@ -80,8 +80,8 @@
                                                     
 <td class="text-center">
     <div class="btn-group">
-        <a href="<?php echo $SiteUrl ?>admin/manage_Vendor.php?vendorid=<?php echo $Vendor['vendor_id']; ?>" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pen"></i></a>
-        <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger deletevendor" data-vendor_id="<?php echo $Vendor['vendor_id']; ?>" ><i class="fa fa-times"></i></a>
+        <a href="<?php echo $SiteUrl ?>admin/manage_Vendor.php?vendorid=<?php echo $Vendor['id']; ?>" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pen"></i></a>
+        <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger deletevendor" data-vendor_id="<?php echo $Vendor['id']; ?>" ><i class="fa fa-times"></i></a>
     </div>
 </td>
                                                 </tr>

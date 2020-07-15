@@ -68,7 +68,7 @@
 		$vendor_name = mysqli_real_escape_string($conn, CleanString($_POST['vendor_name']));
 		$vendor_slug = GenerateSlug(mysqli_real_escape_string($conn, CleanString($_POST['vendor_slug'])), $vendor_name);
 		$vendor_email = mysqli_real_escape_string($conn, CleanString($_POST['vendor_email']));
-		$vendor_status = isset($_POST['vendor_status']) ? mysqli_real_escape_string($conn, CleanString($_POST['vendor_status'])) : 0;
+		$vendor_status = isset($_POST['vendor_status']) && !empty($_POST['vendor_status']) ? mysqli_real_escape_string($conn, CleanString($_POST['vendor_status'])) : 0;
 		$vendor_displayhome = isset($_POST['vendor_displayhome']) ? mysqli_real_escape_string($conn, CleanString($_POST['vendor_displayhome'])) : 0;
 
 		$vendor_phone = !empty($_POST['vendor_phone']) ? mysqli_real_escape_string($conn, CleanString($_POST['vendor_phone'])) : 0;
@@ -81,8 +81,7 @@
 		$metadesc = SetEmptyFields(mysqli_real_escape_string($conn, CleanString($_POST['metadesc'])), $vendor_name);
 		$metakeyword = SetEmptyFields(mysqli_real_escape_string($conn, CleanString($_POST['metakeyword'])), $vendor_name);
 		$vendor_id = isset($_POST['vendor_id']) ? mysqli_real_escape_string($conn, CleanString($_POST['vendor_id'])) : null;
-		
-		
+	 
 		$VendorData = null;
 		if(!empty($vendor_name)){
 				if(isset($vendor_id) && !empty($vendor_id)){
@@ -90,19 +89,19 @@
 					 mysqli_query($conn, "UPDATE vendor SET 
 					 	`vendor_name` = '".$vendor_name."',
 					 	`vendor_slug` = '".$vendor_slug."',
-					 	`vendor_shortdesc` = '".$vendor_shortdesc."',
-					 	`vendor_longdesc` = '".$vendor_longdesc."',
-					 	`vendor_address` = ".$vendor_address.",
+					 	`vendor_shortdisc` = '".$vendor_shortdesc."',
+					 	`vendor_longdisc` = '".$vendor_longdesc."',
+					 	`vendor_address` = '".$vendor_address."',
 					 	`vendor_phone` = ".$vendor_phone.",
 					 	`vendor_status` = ".$vendor_status.",
-					 	`vendor_displayhome` = ".$vendor_displayhome.",
 					 	`vendor_email` = '".$vendor_email."',
 					 	`metatitle` = '".$metatitle."',
 					 	`metakeyword` = '".$metakeyword."',
-					 	`metadescription` = '".$metadesc."'
-					 	 WHERE vendor_id = ".$vendor_id."");
+					 	`metadesc` = '".$metadesc."'
+					 	 WHERE id = ".$vendor_id."");
+ 
 					 	$Catgory_ID = $vendor_id;
-			 		 $VendorData = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM vendor WHERE vendor_id = ".$Catgory_ID.""));
+			 		 $VendorData = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM vendor WHERE id = ".$Catgory_ID.""));
 				}else{
 					// Insert Record
 					 mysqli_query($conn, "INSERT INTO vendor SET 
@@ -131,8 +130,8 @@
          			exit("File Upload Size Limit Is 2 MB Only");
          		}elseif($extention == "png" || $extention == "jpg" || $extention == "jpeg"){
          			
-         			UploadFile($_FILES['vendor_image']['tmp_name'], 1000, 500, 500, 500, TRUE, $newname, $uploaddir, $Catgory_ID, '../../' . $VendorData['vendor_imglg'], '../../' . $VendorData['vendor_imgsm'], 'vendor', 'vendor_imglg', 'vendor_imgsm', 'vendor_id', $Catgory_ID, $conn, $extention);
-         			
+UploadFile($_FILES['vendor_image']['tmp_name'], 1000, 500, 500, 500, TRUE, $newname, $uploaddir, $Catgory_ID, '../../' . $VendorData['vendor_imglg'], '../../' . $VendorData['vendor_imgsm'], 'vendor', 'vendor_imglg', 'vendor_imgsm', 'id', $Catgory_ID, $conn, $extention);
+
          		}else{
          			exit("Please Select The Images Only...!");
          		} 
