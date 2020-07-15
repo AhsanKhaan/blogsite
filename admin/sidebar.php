@@ -65,7 +65,7 @@
 
 
         <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link">
+            <a href="<?php echo $SiteUrl; ?>admin/product.php" class="nav-link">
               <p>Doctors</p>
             </a>
           </li>
