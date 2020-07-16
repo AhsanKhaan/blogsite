@@ -84,33 +84,52 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 //!$SubSubCategory ? $CatColClass = 6 : $CatColClass = 4 ; ?>
 
 <!-- Category -->
-<div class="col-xs-<?php echo $CatColClass; ?>">
-  <div class="form-group">
-    <label for="">Category List : <span style="color:red"> * </span> </label>
-       <?php $CategoryQuery = mysqli_query($conn, "SELECT * FROM category WHERE category_status = 1"); ?>
-    <select name="category" class="categorySelect select-chosen" data-placeholder="Select Category.." style="width: 250px;">
-      <?php if (mysqli_num_rows($CategoryQuery) > 0): ?>
-          <option value=""></option>
-      <?php while($Category = mysqli_fetch_assoc($CategoryQuery)): ?>
-          <option <?php echo isset($ProductData['category_id']) && $ProductData['category_id'] == $Category['category_id'] ? 'selected' : null; ?> value="<?php echo $Category['category_id']; ?>"><?php echo $Category['category_name']; ?></option>
-      <?php endwhile; ?>
-      <?php else: ?>
-          <option value=""></option>
-          <option value="">No Categories Are Active</option>
-      <?php endif ?>
-    </select>
-  </div>
+<div class="col-md-6">
+      <div class="form-group category-group">
+      <label for="cat_dropdown">Category List : <span style="color:red"> * </span> </label>
+            
+            <?php 
+                $CategoryQuery = mysqli_query($conn, "SELECT * FROM category WHERE category_status = 1");
+                // echo "<pre>";
+                // while($Category = mysqli_fetch_assoc($CategoryQuery)){
+                //   var_dump($Category);
+                // }
+                // echo "</pre>";
+                // exit();
+            ?>    
+            <select name="category-chosen" class="form-control categorySelect" id="cat_dropdown">
+                <?php if (mysqli_num_rows($CategoryQuery) > 0): ?>
+                    <option value="">Please Select Category</option>
+                    <?php while($Category = mysqli_fetch_assoc($CategoryQuery)): ?>
+                        <option <?php echo isset($SubcategeryData['category_id']) && $SubcategeryData['category_id'] == $Category['category_id'] ? 'selected' : null; ?> value="<?php echo $Category['category_id']; ?>"><?php echo $Category['category_name']; ?></option>
+                    <?php endwhile; ?>
+                    
+                    <?php else: ?>
+                    <option value=""></option>
+                    <option value="">No Categories Are Active</option>
+                <?php endif ?>
+            </select>
+             
+            
+        </div>
 </div>
-<!-- Category -->
 
-
-
+<?php
+  // $SubcategoryQuery = mysqli_query($conn, "SELECT * FROM subcategory WHERE subcategory_status = 1");
+  // echo "<pre>"; 
+  // while($Subcategory = mysqli_fetch_assoc($SubcategoryQuery)){
+  //   var_dump($Subcategory);
+  // }
+  // echo "</pre>";
+  // exit();
+?>
 <!-- Subcategory -->
-<div class="col-xs-<?php echo $CatColClass; ?>">
+<div class="col-md-6">
   <div class="form-group">
     <label for="">Sub Category List : </label>
      <select name="subcategory" class="subcategorySelect select-chosen" data-placeholder="Select SubCategory.." style="width: 250px;">
             <?php $SubcategoryQuery = mysqli_query($conn, "SELECT * FROM subcategory WHERE subcategory_status = 1"); ?>
+
             <?php if (mysqli_num_rows($SubcategoryQuery) > 0 && isset($pro) && !empty($pro)): ?>
                 <option value=""></option>
             <?php while($Subcategory = mysqli_fetch_assoc($SubcategoryQuery)): ?>
