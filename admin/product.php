@@ -2,28 +2,160 @@
   include('inc/config.php');
   include 'inc/Authorize.php'; 
   include 'inc/functions.php';
-  $PageTitle = ' Sub Categories | ';
+  $PageTitle = ' Manage Products | ';
   include('header.php');
   include('sidebar.php');
   include('topbar.php');  
 ?>
-<div class="content-wrapper">
-<h1>   Hello World</h1>
 
-<div class="col-md-12">
-            <!-- general form elements -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Add Product Details</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form role="form">
-                <div class="card-body">
-                <form id="ProductDetailForm" enctype="multipart/form-data" class="form-horizontal form-bordered">
+<style>
+.form_wrapper_inner, .form_wrapper_inner2 {padding: 8px 0px 14px 0px; background: #fbfbfb;border: 1px solid #f1f1f1; margin: 0px 0px 20px 0px; position: relative;}
+ h3.maintitle {position: absolute;right: -57px;z-index: 999;transform: rotate(-90deg);text-transform: uppercase;font-weight: bold;color: #e7e7e7;font-size: 37px;top: 35px;background: #fff;padding: 0px 22px 0px 24px;border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+.form_wrapper_inner input, .form_wrapper_inner select, .form_wrapper_inner2 input {border-radius: 0px; height: 26px;}
+.form_wrapper_inner > div > div, .form_wrapper_inner2 > div > div {position: relative;}
+.div.norightborder:after {content: unset;}
+.norightborder {position: static;}
+.form_wrapper_inner label, .form_wrapper_inner2 label {font-size: 11px;}
+.form_wrapper_inner ::-webkit-input-placeholder, .form_wrapper_inner2 ::-webkit-input-placeholder {font-size: 10px; text-transform: uppercase;}
+.form_wrapper_inner ::-moz-placeholder, .form_wrapper_inner2 ::-moz-placeholder {font-size: 10px; text-transform: uppercase;}
+.form_wrapper_inner :-ms-input-placeholder, .form_wrapper_inner2 :-ms-input-placeholder {font-size: 10px; text-transform: uppercase;}
+.form_wrapper_inner :-moz-placeholder, .form_wrapper_inner2 :-moz-placeholder {font-size: 10px; text-transform: uppercase;}
+.form_wrapper_inner hr, .form_wrapper_inner2 hr {margin: 15px 0px 10px 0px ;}
+.form_wrapper_inner > div > div:after, .form_wrapper_inner2 > div > div:after {content: '';position: absolute;top: 3px;right: -15px;border-right: 1px solid #ddd;width: 1px;height: 100%;}
+ .widget-simple .widget-content {display: flex;align-items: center;justify-content: space-between; padding: 0px 5px 0px 15px;}
+.widget-simple {padding: 0px 5px 0px 5px;}
+.border-down:after{top: 13px !important;}
+.product_sizes_addition_info > div {margin: 20px;}
+.product_sizes_addition_info > div:nth-child(1) {flex-basis: 45%;}
+.product_sizes_addition_info > div:nth-child(2) {flex-basis: 75%;}
+.product_sizes_addition_info {display: flex;align-items: center;justify-content: space-evenly;}
  
+ /*Cutting Margin*/
+.set-margin-box {border: 1px solid #efefef;background-color: #f9f9f9;padding: 47px;display: block;vertical-align: middle;position: relative;}
+.red-margin {border-color: #ff0707;color: #ff0707;background-color: #FFF;position: relative;}
+.red-margin, .green-margin {border-width: 1px;border-style: dashed;}
+.red-margin small {left: 5px;position: absolute;top: 5px;}
+small, .small {font-size: 85%;}
+.red-margin .top-margin, .red-margin .right-margin, .red-margin .bottom-margin, .red-margin .left-margin {position: absolute;}
+.top-margin {width: 60px;top: -37px;margin: 0px auto;left: 0;right: 0;text-align: center;}
+.grey {color: #777 !important;}
+.no-margin {margin: 0 !important;}
+.form-group select, .form-group textarea, .form-group input[type="text"], .form-group input[type="password"], .form-group input[type="datetime"], .form-group input[type="datetime-local"], .form-group input[type="date"], .form-group input[type="month"], .form-group input[type="time"], .form-group input[type="week"], .form-group input[type="number"], .form-group input[type="email"], .form-group input[type="url"], .form-group input[type="search"], .form-group input[type="tel"], .form-group input[type="color"] {
+    background: #FFF;}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {border-radius: 0 !important;color: #858585;background-color: #fff;border: 1px solid #d5d5d5;padding: 5px 4px 6px;font-size: 14px;font-family: inherit;-webkit-box-shadow: none !important;box-shadow: none !important;-webkit-transition-duration: .1s;transition-duration: .1s;}
+.input-mini {width: 60px;max-width: 100%;}
+.right-margin, .left-margin {bottom: 0;height: 30px;left: auto;margin: auto;right: -30px;top: 0;}
+.bottom-margin {width: 60px;bottom: -37px;margin: 0px auto;left: 0;right: 0;text-align: center;}
+.left-margin {right: auto;left: -40px;}
+.green-margin {border-color: #00cc33;color: #00cc33;height: 87px;margin: 35px 65px;position: relative;}
+.red-margin, .green-margin {border-width: 1px;border-style: dashed;}
+.red-margin small {left: 5px;position: absolute;top: 5px;}
+.green-margin .top-margin {top: -15px;}
+.green-margin .bottom-margin {bottom: -15px;}
+ /*Cutting Margin*/
+
+ .btns_wrapper {margin: 0px 0px 8px 0px;float: right;}
+</style> 
+
+<div class="content-wrapper">
+ <h1>   Hello World</h1>
+
+ <div class="col-md-12">
+   <!-- general form elements -->
+   <div class="card card-primary">
+     <div class="card-header">
+       <h3 class="card-title">Add Product Details</h3>
+     </div>
+      <!-- /.card-header -->
+     <!-- card-body start -->
+     <div class="card-body">
+     <form id="ProductDetailForm" enctype="multipart/form-data" class="form-horizontal form-bordered">
+   <div class="widget-simple themed-background-dark">
+    <h4 class="widget-content widget-content-light" style="margin: 7px 0px;">
+    <a style="display: flex; align-items: center;" href="javascript:void(0)" class="colorwhite uppercase"><strong> General &nbsp; </strong> Details :</a>
+    </h4>
+  </div>
+<?php 
+  if(isset($ProductData) && $ProductData['product_type'] == 'generalecommerce'){
+    $Web2PrintFeatures = FALSE;
+  }
+?>
+<?php $var;
+//!$SubSubCategory ? $CatColClass = 6 : $CatColClass = 4 ; ?>
+
+<!-- Category -->
+<div class="col-xs-<?php echo $CatColClass; ?>">
+  <div class="form-group">
+    <label for="">Category List : <span style="color:red"> * </span> </label>
+       <?php $CategoryQuery = mysqli_query($conn, "SELECT * FROM category WHERE category_status = 1"); ?>
+    <select name="category" class="categorySelect select-chosen" data-placeholder="Select Category.." style="width: 250px;">
+      <?php if (mysqli_num_rows($CategoryQuery) > 0): ?>
+          <option value=""></option>
+      <?php while($Category = mysqli_fetch_assoc($CategoryQuery)): ?>
+          <option <?php echo isset($ProductData['category_id']) && $ProductData['category_id'] == $Category['category_id'] ? 'selected' : null; ?> value="<?php echo $Category['category_id']; ?>"><?php echo $Category['category_name']; ?></option>
+      <?php endwhile; ?>
+      <?php else: ?>
+          <option value=""></option>
+          <option value="">No Categories Are Active</option>
+      <?php endif ?>
+    </select>
+  </div>
+</div>
+<!-- Category -->
 
 
+
+<!-- Subcategory -->
+<div class="col-xs-<?php echo $CatColClass; ?>">
+  <div class="form-group">
+    <label for="">Sub Category List : </label>
+     <select name="subcategory" class="subcategorySelect select-chosen" data-placeholder="Select SubCategory.." style="width: 250px;">
+            <?php $SubcategoryQuery = mysqli_query($conn, "SELECT * FROM subcategory WHERE subcategory_status = 1"); ?>
+            <?php if (mysqli_num_rows($SubcategoryQuery) > 0 && isset($pro) && !empty($pro)): ?>
+                <option value=""></option>
+            <?php while($Subcategory = mysqli_fetch_assoc($SubcategoryQuery)): ?>
+                <option <?php echo isset($ProductData['subcategory_id']) && $ProductData['subcategory_id'] == $Subcategory['subcategory_id'] ? 'selected' : null; ?> value="<?php echo $Subcategory['subcategory_id']; ?>"><?php echo $Subcategory['subcategory_name']; ?></option>
+            <?php endwhile; ?>
+            
+            <?php else: ?>
+                <option value=""></option>
+            <?php if (!isset($pro) && empty($pro)): ?>
+                <option value="">Please Select The Category First</option>
+            <?php else: ?>
+                <option value="">No Subcategories Are Active</option>
+            <?php endif ?>
+            <?php endif ?>
+        </select>
+  
+  </div>
+</div>
+<!-- Subcategory -->
+
+
+<?php $var;// if ($SubSubCategory): ?>
+<!-- Subsubcategory -->
+<!-- <div class="col-xs-4">
+  <div class="form-group">
+    <label for="">Sub Sub Category List : </label>
+     <?php $var;// $SubSubcategoryQuery = mysqli_query($conn, "SELECT * FROM subsubcategory WHERE sub_subcategory_status = 1"); ?>
+        <select name="subsubcategory" class="subsubcategorySelect select-chosen" data-placeholder="Select Sub SubCategory.." style="width: 250px;">
+      <?php $var;// if (mysqli_num_rows($SubSubcategoryQuery) > 0): ?>
+          <option value=""></option>
+      <?php $var;//while($SubSubcategory = mysqli_fetch_assoc($SubSubcategoryQuery)): ?>
+          <option <?php $var;// echo isset($ProductData['subsubcategory_id']) && $ProductData['subsubcategory_id'] == $SubSubcategory['sub_subcategory_id'] ? 'selected' : null; ?> value="<?php echo $SubSubcategory['sub_subcategory_id']; ?>"><?php echo $SubSubcategory['sub_subcategory_name']; ?></option>
+      <?php $var;// endwhile; ?>
+      
+      <?php $var; //else: ?>
+          <option value=""></option>
+          <option value="">No Subcategories Are Active</option>
+      <?php $var;// endif ?>
+    </select>
+  </div>
+</div> -->
+<!-- Subsubcategory -->
+<?php $var;// endif ?>
+
+<?php $ColTitle='Product';?>
 <div class="table_wrapper">
 
 <table class="table_general table table-hover table-bordered text-center">
@@ -278,19 +410,15 @@ if(isset($ProductData['deals_e_date']) && !empty($ProductData['deals_e_date'])){
             </div>                    
                 </form>
             
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-info">Add Product</button>
-                </div>
-                <!-- /.card-footer -->
-              </form>
-            </div>
-            <!-- /.card -->
-
-          </div>
+     </div>
+     <!-- /.card body-->
+    </div>
+    <!-- CARD END -->
+  </div>
+  <!-- col-ends -->
 </div>
 <!-- content wrapper -->
+<script src="<?php echo $SiteUrl; ?>admin/js/productecommerce.js"></script>
 <?php
   
   include('bottom.php');
