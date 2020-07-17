@@ -70,11 +70,6 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
      <!-- card-body start -->
      <div class="card-body">
      <form id="ProductDetailForm" enctype="multipart/form-data" class="form-horizontal form-bordered">
-   <div class="widget-simple themed-background-dark">
-    <h4 class="widget-content widget-content-light" style="margin: 7px 0px;">
-    <a style="display: flex; align-items: center;" href="javascript:void(0)" class="colorwhite uppercase"><strong> General &nbsp; </strong> Details :</a>
-    </h4>
-  </div>
 <?php 
   if(isset($ProductData) && $ProductData['product_type'] == 'generalecommerce'){
     $Web2PrintFeatures = FALSE;
@@ -195,8 +190,8 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
  
 
 <?php if (!isset($ProductData)): ?>
-	<option value="web2print">Product Web 2 Print</option>
-	<option value="generalecommerce">General Ecommerce</option>
+	<option value="web2print">Pets</option>
+	<option value="generalecommerce">Food Accessories</option>
 <?php else: ?>
 	<option value="<?php echo $ProductData['product_type']; ?>"><?php echo ($ProductData['product_type'] == 'generalecommerce' ? 'General Ecommerce' : 'Product Web 2 Print'); ?></option>
 <?php endif ?>
@@ -379,15 +374,19 @@ if(isset($ProductData['deals_e_date']) && !empty($ProductData['deals_e_date'])){
  </tr>
 
 <tr>
-    <td colspan="3">Long Discrption</td>
+    <td colspan="3" ><label for="vendor_longdesc">Long Discrption</label></td>
 </tr>
 
 <tr>
-  <td  colspan="3">
- 
+<td colspan="3">
+<div class="col-md-12">
+	<div class="form-group">
+    <textarea id="textarea-ckeditor" rows="7" name="vendor_longdesc" class="textarea form-control" placeholder="Long Description"><?php echo isset($ProductData['vendor_longdisc']) ? stripslashes($ProductData['vendor_longdisc']) : null; ?></textarea>
+  </div>
+    
+</div>
+</td>
 
-    <textarea id="textarea-ckeditor" rows="7" name="<?php echo $ColTitle; ?>_longdesc" class="ckeditor form-control" placeholder="Long Description"><?php echo isset($ProductData['longdisc']) ? stripslashes($ProductData['longdisc']) : null; ?></textarea>
-  </td>
 </tr>
 
 
