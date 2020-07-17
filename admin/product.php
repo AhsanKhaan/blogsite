@@ -84,8 +84,8 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 //!$SubSubCategory ? $CatColClass = 6 : $CatColClass = 4 ; ?>
 
 <!-- Category -->
-<div class="col-md-6">
-      <div class="form-group category-group">
+<div class="row">
+      <div class="col-md-6 form-group category-group">
       <label for="cat_dropdown">Category List : <span style="color:red"> * </span> </label>
             
             <?php 
@@ -109,29 +109,17 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
                     <option value="">No Categories Are Active</option>
                 <?php endif ?>
             </select>
-             
-            
-        </div>
-</div>
-
-<?php
-  // $SubcategoryQuery = mysqli_query($conn, "SELECT * FROM subcategory WHERE subcategory_status = 1");
-  // echo "<pre>"; 
-  // while($Subcategory = mysqli_fetch_assoc($SubcategoryQuery)){
-  //   var_dump($Subcategory);
-  // }
-  // echo "</pre>";
-  // exit();
-?>
-<!-- Subcategory -->
+          </div>
+          <!-- end col -->
+          <!-- Subcategory -->
 <div class="col-md-6">
-  <div class="form-group">
-    <label for="">Sub Category List : </label>
-     <select name="subcategory" class="subcategorySelect select-chosen" data-placeholder="Select SubCategory.." style="width: 250px;">
-            <?php $SubcategoryQuery = mysqli_query($conn, "SELECT * FROM subcategory WHERE subcategory_status = 1"); ?>
-
-            <?php if (mysqli_num_rows($SubcategoryQuery) > 0 && isset($pro) && !empty($pro)): ?>
-                <option value=""></option>
+  <div class="form-group subcategory-group">
+    <label for="subcat_dropdown">Sub Category List : </label>
+     <select name="subcategory" id="subcat_dropdown" style="width:100%;"class="form-control subcategorySelect select-chosen" data-placeholder="Select SubCategory.." style="width: 250px;">
+            <?php $SubcategoryQuery = mysqli_query($conn, "SELECT subcategory_id,subcategory_name FROM subcategory WHERE subcategory_status = 1"); ?>
+            
+            <?php if (mysqli_num_rows($SubcategoryQuery) > 0 ): ?>
+                <option value="Please Select Sub Category">Please Select Sub Category</option>
             <?php while($Subcategory = mysqli_fetch_assoc($SubcategoryQuery)): ?>
                 <option <?php echo isset($ProductData['subcategory_id']) && $ProductData['subcategory_id'] == $Subcategory['subcategory_id'] ? 'selected' : null; ?> value="<?php echo $Subcategory['subcategory_id']; ?>"><?php echo $Subcategory['subcategory_name']; ?></option>
             <?php endwhile; ?>
@@ -149,6 +137,20 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
   </div>
 </div>
 <!-- Subcategory -->
+
+</div>
+<!-- end row -->
+
+<?php
+  // $SubcategoryQuery = mysqli_query($conn, "SELECT * FROM subcategory WHERE subcategory_status = 1");
+  // echo "<pre>"; 
+  // while($Subcategory = mysqli_fetch_assoc($SubcategoryQuery)){
+  //   var_dump($Subcategory);
+  // }
+  // echo "</pre>";
+  // exit();
+?>
+
 
 
 <?php $var;// if ($SubSubCategory): ?>
