@@ -46,7 +46,7 @@
               <form id="vendorform" enctype="multipart/form-data" class="form-horizontal form-bordered">
                 <div class="card-body">
 <div class="row">
-	<div class="col-md-3">
+	<div class="col-md-6">
 		<div class="form-group name-group">
 			<label class="" for="vendor_image">Vendor Profile Image</label>
 			<div class="">
@@ -98,12 +98,11 @@
         
     </div> -->
 
-<div class="col-md-3">
-	<div class="form-group">
-		<label for=""></label>
+<div class="col-md-6">
+	<div class="form-group mt-4">
 		<div class="custom-control custom-checkbox">
-          <input type="checkbox" <?php echo isset($VendorData['vendor_status']) &&  $VendorData['vendor_status'] == 1 ? 'checked' : null; ?>  name="vendor_status" value="1">
-          <label for="customCheckbox2" class="">Vendor Status</label>
+          <input type="checkbox" id="vendor_status"<?php echo isset($VendorData['vendor_status']) &&  $VendorData['vendor_status'] == 1 ? 'checked' : null; ?>  name="vendor_status" class=""value="1">
+          <label for="vendor_status" class="" style="font-size:30px;">Vendor Status</label>
         </div>
 		  
                         
@@ -111,15 +110,7 @@
 </div>
 
 
-<div class="col-md-3">
-	<div class="form-group">
-		<label for=""></label>
-		<div class="custom-control custom-checkbox">
-          <input type="checkbox"   name="vendor_displayhome" value="1" <?php echo isset($VendorData['vendor_displayhome']) &&  $VendorData['vendor_displayhome'] == 1 ? 'checked' : null; ?>>
-          <label for="customCheckbox1" class="">Display On Home</label>
-        </div>               
-	</div>
-</div>
+
 
 <div class="col-md-12 mb-3">
  <label class="control-label" for="vendor_address">Address</label>
